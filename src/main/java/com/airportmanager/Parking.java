@@ -7,7 +7,12 @@ public class Parking extends Spot{
         return "Parking";
     }
 
+    @Override
+    public int getAirportLocation() {
+        return this.location;
+    }
 
+    
 
 
 }

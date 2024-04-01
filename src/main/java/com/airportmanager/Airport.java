@@ -1,11 +1,12 @@
 package com.airportmanager;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 
 public class Airport{
 
-    HashMap<Spot, Plane> spotList;
+    HashMap<Spot, Optional<Plane>> spotList;
     
 }
 
