@@ -1,6 +1,13 @@
 package com.airportmanager;
 
+import java.util.LinkedList;
+
 public class Parking extends Spot{
+
+
+    public Parking() {
+        this.connectedSpots = new LinkedList<Spot>();
+    }
 
     @Override
     public String getAirportType() {
@@ -12,6 +19,9 @@ public class Parking extends Spot{
         return this.location;
     }
 
+    public LinkedList<Spot> getConnectedSpots() {
+        return this.connectedSpots;
+    } 
     
 
 

@@ -6,7 +6,19 @@ import java.util.Optional;
 
 public class Airport{
 
-    HashMap<Spot, Optional<Plane>> spotList;
+    // config left e right qd o prog comeca
+    // popular a config
+
+     
+    
+
+    protected HashMap<Spot, Optional<Plane>> spotList;
+
+
+    public void addPlane(Spot s, Optional<Plane> p){
+        spotList.put(s, p);
+    }
+
     
 }
 
