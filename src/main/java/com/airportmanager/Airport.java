@@ -14,15 +14,16 @@ public class Airport{
      
     
 
-    protected HashMap<Spot, Optional<Plane>> spotList;
+    protected HashMap<Spot, Boolean> spotList;
+    protected HashMap<Plane, Spot> planeList;
 
     public Airport() {
     }
 
 
 
-    public void addPlane(Spot s, Optional<Plane> p){
-        spotList.put(s, p);
+    public void addPlane(Spot s, Plane p){
+        spotList.put(s, true);
     }
 
 

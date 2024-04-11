@@ -22,7 +22,7 @@ public class Lane extends Spot{
 
     @Override
     public LinkedList<Spot> getConnectedSpots() {
-        return this.getConnectedSpots();
+        return this.connectedSpots;
     }
 
     

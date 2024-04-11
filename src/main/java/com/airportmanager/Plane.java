@@ -5,6 +5,8 @@ import java.util.LinkedList;
 public class Plane implements AirportInterface{
 
     private int location;
+    protected Spot currentSpot;
+
 
 
     @Override
@@ -19,7 +21,7 @@ public class Plane implements AirportInterface{
 
     @Override
     public LinkedList<Spot> getConnectedSpots() {
-        return this.getConnectedSpots();
+        return currentSpot.getConnectedSpots();
     }
 
     
