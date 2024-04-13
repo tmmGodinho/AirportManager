@@ -30,6 +30,19 @@ public class Airport{
         }
     }
 
+    public void movePlane(Plane p, Spot s){
+        // if new spot is connected to current plane spot + if spot is empty on spotList
+        if(p.currentSpot.getConnectedSpots().contains(s) && !this.spotList.get(s)) {
+            // clear current spot on spotList
+            this.spotList.put(p.currentSpot, false);
+            // set current spot to new spot
+            p.setCurrentSpot(s);
+            planeList.put(p, s);
+            // set new spot to occupied on spotList
+            this.spotList.put(s, true);
+        }
+    }
+
     public void addSpot(Spot s){
         spotList.putIfAbsent(s, false);
     }

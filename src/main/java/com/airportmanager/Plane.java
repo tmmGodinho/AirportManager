@@ -20,7 +20,9 @@ public class Plane implements AirportInterface{
         return currentSpot;
     }
 
-
+    public void setCurrentSpot(Spot nextSpot) {
+        this.currentSpot = nextSpot;
+    }
 
     @Override
     public HashSet<Spot> getConnectedSpots() {

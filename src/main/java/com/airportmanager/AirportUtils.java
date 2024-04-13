@@ -39,6 +39,11 @@ public class AirportUtils {
         airport.addSpot(parking8);
         // add planes
         airport.addPlane(plane1.getCurrentSpot(), plane1);
+
+        // move planes
+        airport.movePlane(plane1,parking1);
+        airport.movePlane(plane1,lane1);
+        airport.movePlane(plane1,parking1);
         return airport;
     }
 
