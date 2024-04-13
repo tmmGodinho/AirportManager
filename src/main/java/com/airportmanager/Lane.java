@@ -22,8 +22,6 @@ public class Lane extends Spot{
     @Override
     public void addToConnectedSpots(Spot s) {
         this.connectedSpots.add(s);
-        //TODO:discriminate facing, lanes should be one-way
-        s.connectedSpots.add(this);
     }
 
 

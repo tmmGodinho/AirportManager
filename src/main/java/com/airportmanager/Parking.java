@@ -22,7 +22,6 @@ public class Parking extends Spot{
     @Override
     public void addToConnectedSpots(Spot s) {
         this.connectedSpots.add(s);
-        s.connectedSpots.add(this);
     }
 
 
