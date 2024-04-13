@@ -4,7 +4,6 @@ import java.util.HashSet;
 
 public class Plane implements AirportInterface{
 
-    private int location;
     protected Spot currentSpot;
 
 
