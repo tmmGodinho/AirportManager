@@ -44,6 +44,9 @@ public class AirportUtils {
         airport.movePlane(plane1,parking1);
         airport.movePlane(plane1,lane1);
         airport.movePlane(plane1,parking1);
+        airport.removePlane(plane1);
+        airport.movePlane(plane1,lane1);
+        airport.removePlane(plane1);
         return airport;
     }
 

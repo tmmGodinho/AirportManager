@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Airport{
 
-    // config left e right qd o prog comeca
+    //TODO: config left e right qd o prog comeca
     // popular a config
 
 
@@ -24,9 +24,14 @@ public class Airport{
 
 
     public void addPlane(Spot s, Plane p){
-        if (!spotList.get(s)) {
-            spotList.put(s, true);
-            planeList.put(p, s);
+        // if spawn spot is a Lane
+        if (s.getClass() == Lane.class) {
+            // if spot is marked as empty on spotList
+            if (!spotList.get(s)) {
+                // mark spot as occupied on spotList + put the plane on planeList
+                spotList.put(s, true);
+                planeList.put(p, s);
+            }
         }
     }
 
