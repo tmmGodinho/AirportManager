@@ -31,7 +31,7 @@ public class Airport{
     }
 
     public void addSpot(Spot s){
-        spotList.putIfAbsent(s, true);
+        spotList.putIfAbsent(s, false);
     }
 
 
