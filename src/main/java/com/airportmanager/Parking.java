@@ -1,12 +1,12 @@
 package com.airportmanager;
 
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class Parking extends Spot{
 
 
     public Parking() {
-        this.connectedSpots = new LinkedList<Spot>();
+        this.connectedSpots = new HashSet<>();
     }
 
     @Override
@@ -14,15 +14,16 @@ public class Parking extends Spot{
         return "Parking";
     }
 
-    @Override
-    public int getAirportLocation() {
-        return this.location;
+
+    public HashSet<Spot> getConnectedSpots() {
+        return this.connectedSpots;
     }
 
-    public LinkedList<Spot> getConnectedSpots() {
-        return this.connectedSpots;
-    } 
-    
+    @Override
+    public void addToConnectedSpots(Spot s) {
+        this.connectedSpots.add(s);
+        s.connectedSpots.add(this);
+    }
 
 
 }

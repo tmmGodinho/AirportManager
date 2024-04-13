@@ -1,17 +1,19 @@
 package com.airportmanager;
 
-import java.util.LinkedList;
+import java.util.HashSet;
+
 
 public abstract class Spot implements AirportInterface{
 
-    protected int location;
-    protected LinkedList<Spot> connectedSpots;
+    protected HashSet<Spot> connectedSpots;
 
     // given a spot where i can go, connections structure
 
     public abstract String getAirportType();
     
-    public abstract LinkedList<Spot> getConnectedSpots();
+    public abstract HashSet<Spot> getConnectedSpots();
+
+    public abstract void addToConnectedSpots(Spot s);
 
 
 

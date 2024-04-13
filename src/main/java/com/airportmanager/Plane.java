@@ -1,6 +1,6 @@
 package com.airportmanager;
 
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class Plane implements AirportInterface{
 
@@ -14,13 +14,9 @@ public class Plane implements AirportInterface{
         return "Plane";
     }
 
-    @Override
-    public int getAirportLocation() {
-        return this.location;
-    }
 
     @Override
-    public LinkedList<Spot> getConnectedSpots() {
+    public HashSet<Spot> getConnectedSpots() {
         return currentSpot.getConnectedSpots();
     }
 

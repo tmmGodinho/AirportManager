@@ -1,14 +1,13 @@
 package com.airportmanager;
 
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class Lane extends Spot{
 
 
     public Lane(){
-        this.connectedSpots = new LinkedList<Spot>();
+        this.connectedSpots = new HashSet<>();
     }
-
 
     @Override
     public String getAirportType() {
@@ -16,15 +15,16 @@ public class Lane extends Spot{
     }
 
     @Override
-    public int getAirportLocation() {
-        return this.location;
-    }
-
-    @Override
-    public LinkedList<Spot> getConnectedSpots() {
+    public HashSet<Spot> getConnectedSpots() {
         return this.connectedSpots;
     }
 
-    
+    @Override
+    public void addToConnectedSpots(Spot s) {
+        this.connectedSpots.add(s);
+        //TODO:discriminate facing, lanes should be one-way
+        s.connectedSpots.add(this);
+    }
+
 
 }
