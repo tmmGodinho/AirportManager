@@ -43,6 +43,16 @@ public class Airport{
         }
     }
 
+    public void removePlane(Plane p){
+        //check if in a lane
+        if(p.getCurrentSpot().getClass() == Lane.class) {
+            //remove from planeList
+            this.planeList.remove(p);
+            //normalize spot on spotList
+            this.spotList.put(p.getCurrentSpot(), false);
+        }
+    }
+
     public void addSpot(Spot s){
         spotList.putIfAbsent(s, false);
     }
