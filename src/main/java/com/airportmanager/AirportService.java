@@ -3,7 +3,6 @@ package com.airportmanager;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -27,7 +26,7 @@ public class AirportService
 
             // Convert JSON File to Java Object
             // TODO: this should be an Airport with 2 AirportConfigs
-            AirportConfig airportConfig = gson.fromJson(reader, AirportConfig.class);
+            //AirportConfig airportConfig = gson.fromJson(reader, AirportConfig.class);
             Airport airport = gson.fromJson(reader, Airport.class);
                     
             // print airport
