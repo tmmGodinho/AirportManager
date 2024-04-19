@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class Parking extends Spot{
 
 
+
     public Parking() {
         this.connectedSpots = new HashSet<>();
     }

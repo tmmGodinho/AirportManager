@@ -16,17 +16,27 @@ import com.google.gson.JsonParseException;
 
 public class AirportDeserializer implements JsonDeserializer<Airport> {
     @Override
-    public Airport deserialize(JsonElement jsonElement, Type type, 
-                             JsonDeserializationContext context) 
+    public Airport deserialize(JsonElement jsonElement, Type type,
+                                     JsonDeserializationContext context)
                              throws JsonParseException {
-        Airport airport = new Airport();
+        //AirportConfig airportConfig = new AirportConfig(Facing.);
         JsonObject jsonObject = jsonElement.getAsJsonObject();
-        JsonArray parkingJsonArray = (JsonArray) jsonObject.get("parking");
-        JsonArray laneJsonArray = (JsonArray) jsonObject.get("lanes");
+        JsonObject eastObject = (JsonObject) jsonObject.get("east");
+        JsonObject westObject = (JsonObject) jsonObject.get("west");
+        AirportConfig eastAirportConfig = genAirportConfig(eastObject, Facing.EAST);
+        AirportConfig westAirportConfig = genAirportConfig(westObject, Facing.WEST);
+        //TODO: THIS RETURNS AN AIRPORT
+        return new Airport(eastAirportConfig, westAirportConfig);
+    }
+
+    private AirportConfig genAirportConfig(JsonObject jsonAirport, Facing facing){
+        AirportConfig airportConfig = new AirportConfig(facing);
+        JsonArray parkingJsonArray = (JsonArray) jsonAirport.get("parking");
+        JsonArray laneJsonArray = (JsonArray) jsonAirport.get("lanes");
         HashMap<String, Spot> spotMap = new HashMap<>();
-        parseSpotLists(airport, spotMap, parkingJsonArray, Parking::new);
-        parseSpotLists(airport, spotMap, laneJsonArray, Lane::new);
-        JsonObject connectionsJsonObject = (JsonObject) jsonObject.get("connections");
+        parseSpotLists(airportConfig, spotMap, parkingJsonArray, Parking::new);
+        parseSpotLists(airportConfig, spotMap, laneJsonArray, Lane::new);
+        JsonObject connectionsJsonObject = (JsonObject) jsonAirport.get("connections");
         connectionsJsonObject.keySet().forEach(fromKey ->
         {
             Spot from = spotMap.get(fromKey);
@@ -41,16 +51,17 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
                 }
             }
         });
-        return airport;
+        return airportConfig;
     }
-
-    private void parseSpotLists(Airport airport, HashMap<String, Spot> spotMap, JsonArray spotList, Supplier<Spot> spotConstructor) {
+    
+    
+    private void parseSpotLists(AirportConfig airportConfig, HashMap<String, Spot> spotMap, JsonArray spotList, Supplier<Spot> spotConstructor) {
         Iterator<JsonElement> it = spotList.iterator();
         while (it.hasNext()) {
             String spotString = it.next().getAsString();
             Spot spot = spotConstructor.get();
             spotMap.put(spotString, spot);
-            airport.addSpot(spot);
+            airportConfig.addSpot(spot);
         }
     }
 }

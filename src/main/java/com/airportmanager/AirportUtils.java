@@ -2,9 +2,10 @@ package com.airportmanager;
 
 public class AirportUtils {
 
-    public static Airport genBasicConfig() {
+   /* public static AirportConfig genBasicConfig() {
         //init objects
-        Airport airport = new Airport();
+        //TODO: FACING
+        AirportConfig airportConfig = new AirportConfig();
         Lane lane1 = new Lane();
         Lane lane2 = new Lane();
         Parking parking1 = new Parking();
@@ -27,29 +28,31 @@ public class AirportUtils {
         parking8.addToConnectedSpots(lane2);
         lane1.addToConnectedSpots(lane2);
         // add spots to airport
-        airport.addSpot(lane1);
-        airport.addSpot(lane2);
-        airport.addSpot(parking1);
-        airport.addSpot(parking2);
-        airport.addSpot(parking3);
-        airport.addSpot(parking4);
-        airport.addSpot(parking5);
-        airport.addSpot(parking6);
-        airport.addSpot(parking7);
-        airport.addSpot(parking8);
+        airportConfig.addSpot(lane1);
+        airportConfig.addSpot(lane2);
+        airportConfig.addSpot(parking1);
+        airportConfig.addSpot(parking2);
+        airportConfig.addSpot(parking3);
+        airportConfig.addSpot(parking4);
+        airportConfig.addSpot(parking5);
+        airportConfig.addSpot(parking6);
+        airportConfig.addSpot(parking7);
+        airportConfig.addSpot(parking8);
         // add planes
-        airport.addPlane(plane1.getCurrentSpot(), plane1);
+        airportConfig.addPlane(plane1.getCurrentSpot(), plane1);
 
         // move planes
-        airport.movePlane(plane1,parking1);
-        airport.movePlane(plane1,lane1);
-        airport.movePlane(plane1,parking1);
-        airport.removePlane(plane1);
-        airport.movePlane(plane1,lane1);
-        airport.removePlane(plane1);
-        return airport;
-    }
+        airportConfig.movePlane(plane1,parking1);
+        airportConfig.movePlane(plane1,lane1);
+        airportConfig.movePlane(plane1,parking1);
+        airportConfig.removePlane(plane1);
+        airportConfig.movePlane(plane1,lane1);
+        airportConfig.removePlane(plane1);
+        return airportConfig;
 
+
+    }
+    */
 
 
 

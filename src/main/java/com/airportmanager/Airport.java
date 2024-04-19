@@ -1,71 +1,36 @@
 package com.airportmanager;
 
-import java.util.HashMap;
+import java.util.Map;
 
+public class Airport {
 
+    private AirportConfig eastConfig;
+    private AirportConfig westConfig;
 
+    private Facing facing;
 
-public class Airport{
-
-    //TODO: config left e right qd o prog comeca
-    // popular a config
-
-
-    
-
-    protected HashMap<Spot, Boolean> spotList;
-    protected HashMap<Plane, Spot> planeList;
-
-    public Airport() {
-        this.spotList = new HashMap<>();
-        this.planeList = new HashMap<>();
+    public Airport(AirportConfig eastConfig, AirportConfig westConfig){
+        this.eastConfig = eastConfig;
+        this.westConfig = westConfig;
     }
 
+    public void setFacing(Facing facing) {
+        this.facing = facing;
+    }
 
-
-    public void addPlane(Spot s, Plane p){
-        // if spawn spot is a Lane
-        if (s.getClass() == Lane.class) {
-            // if spot is marked as empty on spotList
-            if (!spotList.get(s)) {
-                // mark spot as occupied on spotList + put the plane on planeList
-                spotList.put(s, true);
-                planeList.put(p, s);
-            }
+    public void print(){
+        System.out.println("Printing West Config...");
+        for (Map.Entry<Spot, Boolean> spotEntry : this.westConfig.spotList.entrySet()) {
+            Spot spot = spotEntry.getKey();
+            System.out.println(spot.getAirportType());
+            System.out.println(spot + " Connected: " + spot.getConnectedSpots());
         }
-    }
-
-    public void movePlane(Plane p, Spot s){
-        // if new spot is connected to current plane spot + if spot is empty on spotList
-        if(p.currentSpot.getConnectedSpots().contains(s) && !this.spotList.get(s)) {
-            // clear current spot on spotList
-            this.spotList.put(p.currentSpot, false);
-            // set current spot to new spot
-            p.setCurrentSpot(s);
-            planeList.put(p, s);
-            // set new spot to occupied on spotList
-            this.spotList.put(s, true);
+        System.out.println("Printing East Config...");
+        for (Map.Entry<Spot, Boolean> spotEntry : this.eastConfig.spotList.entrySet()) {
+            Spot spot = spotEntry.getKey();
+            System.out.println(spot.getAirportType());
+            System.out.println(spot + " Connected: " + spot.getConnectedSpots());
         }
+
     }
-
-    public void removePlane(Plane p){
-        //check if in a lane
-        if(p.getCurrentSpot().getClass() == Lane.class) {
-            //remove from planeList
-            this.planeList.remove(p);
-            //normalize spot on spotList
-            this.spotList.put(p.getCurrentSpot(), false);
-        }
-    }
-
-    public void addSpot(Spot s){
-        spotList.putIfAbsent(s, false);
-    }
-
-
-
-    
-        
-    
 }
-

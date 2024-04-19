@@ -12,21 +12,21 @@ import com.google.gson.Gson;
 /**
  * Unit test for simple App.
  */
-public class AirportDeserializerTest 
+public class airportConfigDeserializerTest
 {
     @Test
     public void givenJsonArrayOfFoos_whenDeserializingToArray_thenCorrect() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         // gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
-        gsonBuilder.registerTypeAdapter(Airport.class, new AirportDeserializer());
+        gsonBuilder.registerTypeAdapter(AirportConfig.class, new AirportDeserializer());
         Gson gson = gsonBuilder.create();
         try (Reader reader = new FileReader("./test_config.json")) {
 
             // Convert JSON File to Java Object
-            Airport airport = gson.fromJson(reader, Airport.class);
+            AirportConfig airportConfig = gson.fromJson(reader, AirportConfig.class);
                     
             // print airport 
-            System.out.println(airport);
+            System.out.println(airportConfig);
 
         } catch (IOException e) {
             e.printStackTrace();

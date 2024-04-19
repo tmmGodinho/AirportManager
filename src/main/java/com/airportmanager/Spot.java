@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 public abstract class Spot implements AirportInterface{
 
+
     protected HashSet<Spot> connectedSpots;
 
     // given a spot where i can go, connections structure

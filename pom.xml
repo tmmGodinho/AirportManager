@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.airportmanager</groupId>
-  <artifactId>airport-manager</artifactId>
+  <artifactId>airportConfig-manager</artifactId>
   <version>0.01</version>
 
-  <name>airport-manager</name>
+  <name>airportConfig-manager</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

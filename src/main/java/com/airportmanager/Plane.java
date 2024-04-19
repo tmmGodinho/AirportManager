@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class Plane implements AirportInterface{
 
     protected Spot currentSpot;
+    protected Facing facing;
 
     Plane(Spot s){
         this.currentSpot = s;
