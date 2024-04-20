@@ -7,6 +7,10 @@ import java.io.Reader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 /*
 TODO: big parking - small parking
 TODO: MAKE TESTCONFIG.JSON HAVE THE ACTUAL CONFIG
@@ -15,9 +19,9 @@ TODO: MAKE TESTCONFIG.JSON HAVE THE ACTUAL CONFIG
 
 
 
-public class AirportService 
+public class AirportService extends Application
 {
-    public static void main( String[] args )
+    public static void main ( String[] args )
     {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Airport.class, new AirportDeserializer());
@@ -25,8 +29,6 @@ public class AirportService
         try (Reader reader = new FileReader("src/main/resources/TestConfig.json")) {
 
             // Convert JSON File to Java Object
-            // TODO: this should be an Airport with 2 AirportConfigs
-            //AirportConfig airportConfig = gson.fromJson(reader, AirportConfig.class);
             Airport airport = gson.fromJson(reader, Airport.class);
                     
             // print airport
@@ -41,10 +43,17 @@ public class AirportService
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //TODO: THIS LAUNCHES GUI
+        launch(args);
+
+
     }
 
 
-
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.show();
+    }
 }
 
 

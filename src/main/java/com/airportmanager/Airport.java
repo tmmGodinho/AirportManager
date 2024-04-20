@@ -18,6 +18,11 @@ public class Airport {
         this.facing = facing;
     }
 
+    public void changeConfig(){
+        //TODO: this should transfer active planes from active config to new config
+    }
+
+
     public void print(){
         System.out.println("Printing West Config...");
         for (Map.Entry<Spot, Boolean> spotEntry : this.westConfig.spotList.entrySet()) {
