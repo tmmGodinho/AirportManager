@@ -18,15 +18,15 @@ public class airportConfigDeserializerTest
     public void givenJsonArrayOfFoos_whenDeserializingToArray_thenCorrect() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         // gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
-        gsonBuilder.registerTypeAdapter(AirportConfig.class, new AirportDeserializer());
+        gsonBuilder.registerTypeAdapter(Airport.class, new AirportDeserializer());
         Gson gson = gsonBuilder.create();
-        try (Reader reader = new FileReader("./test_config.json")) {
+        try (Reader reader = new FileReader("src/main/resources/TestConfig.json")) {
 
             // Convert JSON File to Java Object
-            AirportConfig airportConfig = gson.fromJson(reader, AirportConfig.class);
+            Airport airport = gson.fromJson(reader, Airport.class);
                     
             // print airport 
-            System.out.println(airportConfig);
+            System.out.println(airport);
 
         } catch (IOException e) {
             e.printStackTrace();
