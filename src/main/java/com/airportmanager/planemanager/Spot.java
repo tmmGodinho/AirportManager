@@ -5,6 +5,8 @@ import java.util.HashSet;
 
 public abstract class Spot implements AirportInterface{
 
+
+
     protected String id;
     protected HashSet<Spot> connectedSpots;
 

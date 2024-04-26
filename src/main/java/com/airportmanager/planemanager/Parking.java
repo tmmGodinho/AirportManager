@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Parking extends Spot{
 
-
+    //TODO:cluster the parking spots
 
     public Parking() {
         this.connectedSpots = new HashSet<>();

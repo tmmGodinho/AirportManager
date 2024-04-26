@@ -48,6 +48,18 @@ public class Controller {
     //TODO: do behind scenes Airport alteration
     //TODO: do UI update   getChildrenUnmodifiable   .isVisible();
 
+
+    //phase 1
+    //TODO: id all the objects
+    //TODO: get json file ready
+    //TODO: spawn airplane
+    //TODO: make airplane move
+    //TODO: delete airplane
+    //phase 2
+    //TODO: cluster parkings
+
+
+
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
         Button button = (Button)actionEvent.getSource();
         String planeID = "#" + button.getText() + "Plane";
