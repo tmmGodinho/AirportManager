@@ -51,7 +51,6 @@ public class Controller {
 
     //phase 1
     //TODO: id all the objects
-    //TODO: get json file ready
     //TODO: spawn airplane
     //TODO: make airplane move
     //TODO: delete airplane
