@@ -25,7 +25,6 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
         JsonObject westObject = (JsonObject) jsonObject.get("west");
         AirportConfig eastAirportConfig = genAirportConfig(eastObject, Facing.EAST);
         AirportConfig westAirportConfig = genAirportConfig(westObject, Facing.WEST);
-        //TODO: THIS RETURNS AN AIRPORT
         return new Airport(eastAirportConfig, westAirportConfig);
     }
 
@@ -60,7 +59,7 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
         while (it.hasNext()) {
             String spotString = it.next().getAsString();
             Spot spot = spotConstructor.get();
-            //TODO:setter
+            //setter?
             spot.setId(spotString);
             spotMap.put(spotString, spot);
             airportConfig.addSpot(spot);

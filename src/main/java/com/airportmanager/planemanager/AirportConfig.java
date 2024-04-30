@@ -7,11 +7,6 @@ import java.util.HashMap;
 
 public class AirportConfig {
 
-    /*TODO: config left e right qd o prog comeca
-    TODO: popular a config
-
-
-    */
 
     final protected Facing facing;
     protected HashMap<Spot, Boolean> spotList;
@@ -46,6 +41,8 @@ public class AirportConfig {
             planeList.put(p, s);
             // set new spot to occupied on spotList
             this.spotList.put(s, true);
+            //change spot attribute on plane
+            p.setCurrentSpot(s);
         }
     }
 

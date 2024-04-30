@@ -79,7 +79,7 @@
     </MenuBar>
     <AnchorPane id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <GridPane layoutX="40.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="475" layoutX="40.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -91,19 +91,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                 <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="475Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="475Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="158.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="471" layoutX="158.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -115,19 +115,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="471Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="471Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="85.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="473" layoutX="85.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -139,19 +139,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="473Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="473Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="329.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="463" layoutX="329.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="30.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="0.0" prefWidth="60.0" />
@@ -163,19 +163,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="463Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="463Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="284.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="465" layoutX="284.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -187,19 +187,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="465Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="465Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="374.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="461" layoutX="374.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -211,19 +211,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="461Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="461Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="531.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="453" layoutX="531.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -235,19 +235,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="453Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="453Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="497.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="455" layoutX="497.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -259,19 +259,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="455Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="455Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="587.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="451" layoutX="587.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -283,19 +283,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="451Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="451Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="40.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="466" layoutX="40.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -307,19 +307,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="466Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="466Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="158.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="462" layoutX="158.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -331,19 +331,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="462Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="462Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="85.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="464" layoutX="85.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -355,19 +355,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="464Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="464Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="329.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="454" layoutX="329.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -379,19 +379,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="454Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="284.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="456" layoutX="284.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -403,19 +403,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="456Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="456Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="374.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="452" layoutX="374.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -427,19 +427,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="452Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="486.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="446" layoutX="486.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -451,19 +451,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="446Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="587.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="442" layoutX="587.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -475,19 +475,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="442Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="531.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="444" layoutX="531.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -499,19 +499,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="444Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="838.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="432" layoutX="838.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -523,19 +523,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="432Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="739.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="436" layoutX="739.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -547,19 +547,19 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="436Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <GridPane layoutX="784.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="434" layoutX="784.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -571,12 +571,12 @@
                <children>
                   <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
                   <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView id="434Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../nomeansno.png" />
                      </image>
@@ -593,47 +593,47 @@
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="b18Cross" fitHeight="53.0" fitWidth="53.0" layoutX="67.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B18Cross" fitHeight="53.0" fitWidth="53.0" layoutX="67.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="53.0" layoutX="486.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="B17Plane" fitHeight="68.0" fitWidth="53.0" layoutX="284.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="53.0" layoutX="284.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../plane.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="53.0" layoutX="671.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../plane.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../plane.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="B17Cross" fitHeight="53.0" fitWidth="53.0" layoutX="285.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="672.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="B16Plane" fitHeight="68.0" fitWidth="53.0" layoutX="486.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ImageView id="B16Cross" fitHeight="53.0" fitWidth="53.0" layoutX="487.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="487.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="B15Plane" fitHeight="68.0" fitWidth="53.0" layoutX="671.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ImageView id="B15Cross" fitHeight="53.0" fitWidth="53.0" layoutX="672.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="285.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="B14Plane" fitHeight="68.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ImageView id="B14Cross" fitHeight="53.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
