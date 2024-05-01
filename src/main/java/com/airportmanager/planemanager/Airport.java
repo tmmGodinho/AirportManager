@@ -5,6 +5,7 @@ import java.util.Map;
 public class Airport {
 
     private AirportConfig eastConfig;
+
     private AirportConfig westConfig;
 
     private Facing facing;
@@ -16,6 +17,36 @@ public class Airport {
 
     public void setFacing(Facing facing) {
         this.facing = facing;
+    }
+
+    public AirportConfig getEastConfig() {
+        return eastConfig;
+    }
+
+    public AirportConfig getWestConfig() {
+        return westConfig;
+    }
+
+    public Facing getFacing() {
+        return facing;
+    }
+
+    public Spot getSpotFromId(String id){
+        Spot Aux = null;
+        for( Spot s : this.eastConfig.spotList.keySet()){
+            if( s.getId().equals(id)) {
+                Aux = s;
+                return s;
+            }            
+        }
+        return Aux;
+    }
+
+    public void populateNewPlane(Plane plane, Spot spot){
+        this.eastConfig.planeList.put(plane, spot);
+        this.westConfig.planeList.put(plane, spot);
+        this.eastConfig.spotList.put(spot, true);
+        this.westConfig.spotList.put(spot, true);
     }
 
     public void changeConfig(){

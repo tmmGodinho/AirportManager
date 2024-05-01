@@ -21,6 +21,7 @@ public class Controller {
     private VBox myVBox;
 
     private Parent root;
+    private int planeCounter;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -44,9 +45,9 @@ public class Controller {
         this.airport.print();
     }
 
-    //TODO: make procedure
-    //TODO: do behind scenes Airport alteration
-    //TODO: do UI update   getChildrenUnmodifiable   .isVisible();
+    // make procedure
+    // do behind scenes Airport alteration
+    // do UI update   getChildrenUnmodifiable   .isVisible();
 
 
     //phase 1
@@ -61,22 +62,30 @@ public class Controller {
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
         Button button = (Button)actionEvent.getSource();
         String planeID = "#" + button.getText() + "Plane";
-//        myVBox.lookup(planeID)
-        //iterate every object in GUI
-        for (Node node : myVBox.getChildren()) {
-            if (node.getClass() == AnchorPane.class) {
-                //iterate every object in AnchorPane
-                for(Node nodeAux : ((AnchorPane) node).getChildren()){
-                    if (nodeAux.getClass() == ImageView.class) {
-                        if (Objects.equals(nodeAux.getId(), "B18Plane") && !nodeAux.isVisible()) {
-                            nodeAux.setVisible(true);
-                        }
-                    }
-                }
-            }
+        //myVBox.lookup(planeID); planeID tem de comecar com #
+        String buttonId = this.getLaneButtonLocation(actionEvent);
+        //TODO: change whichConfig
+        //TODO: spawn plane
+        //check airport config spotlist for same id as button to see if there is a plane there
+        Spot planeSpot = airport.getSpotFromId(buttonId);
+        if(!planeSpot.equals(null)) {
+            //spawn plane in buttonId Spot
+            Plane newPlane = new Plane("Plane" + planeCounter, planeSpot, airport.getFacing());
+            airport.populateNewPlane(newPlane, planeSpot);
+//            make plane.png appear
+            myVBox.lookup("#" + buttonId+ "Plane").setVisible(true);
         }
+
+
+
+
     }
 
+
+    public String getLaneButtonLocation(javafx.event.ActionEvent actionEvent){
+        Button button = (Button)actionEvent.getSource();
+        return button.getId();
+    }
 
 
 }

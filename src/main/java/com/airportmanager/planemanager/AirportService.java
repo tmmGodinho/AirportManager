@@ -37,6 +37,8 @@ public class AirportService extends Application {
             Airport airport = gson.fromJson(reader, Airport.class);
 
             // Save airport as attribute to pass to GUi
+//            TODO:fix facing init
+            airport.setFacing(Facing.WEST);
             setAirport(airport);
                     
             // print airport
@@ -51,13 +53,12 @@ public class AirportService extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //TODO: THIS LAUNCHES GUI
+        //THIS LAUNCHES GUI
         launch(args);
 
 
     }
 
-    //TODO:
 
     @Override
     public void start(Stage stage) throws IOException {
