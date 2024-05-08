@@ -51,7 +51,7 @@ public class Controller {
 
 
     //phase 1
-    //TODO: spawn airplane
+    //TODO: spawn airplane (1/2 done, missing discriminator condition)
     //TODO: make airplane move
     //TODO: delete airplane
     //phase 2

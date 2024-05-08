@@ -45,8 +45,12 @@ public class Airport {
     public void populateNewPlane(Plane plane, Spot spot){
         this.eastConfig.planeList.put(plane, spot);
         this.westConfig.planeList.put(plane, spot);
-        this.eastConfig.spotList.put(spot, true);
-        this.westConfig.spotList.put(spot, true);
+        for (Spot entry: this.eastConfig.spotList.keySet()) {
+            if (entry.getId().equals(spot.id)) this.eastConfig.spotList.put(entry, true);
+        }
+        for (Spot entry: this.westConfig.spotList.keySet()) {
+            if (entry.getId().equals(spot.id)) this.westConfig.spotList.put(entry, true);
+        }
     }
 
     public void changeConfig(){
