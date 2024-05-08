@@ -2,7 +2,7 @@ package com.airportmanager.planemanager;
 
 import java.util.HashSet;
 
-public class Plane implements AirportInterface{
+public class Plane {
 
     protected String id;
     protected Spot currentSpot;
@@ -18,12 +18,10 @@ public class Plane implements AirportInterface{
     }
 
 
-    @Override
     public String getId() {
         return id;
     }
 
-    @Override
     public String getAirportType() {
         return "Plane";
     }
@@ -43,10 +41,6 @@ public class Plane implements AirportInterface{
         this.facing = facing;
     }
 
-    @Override
-    public HashSet<Spot> getConnectedSpots() {
-        return currentSpot.getConnectedSpots();
-    }
 
     
 

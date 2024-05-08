@@ -9,6 +9,7 @@ public class AirportConfig {
 
 
     final protected Facing facing;
+    //this is dumb
     protected HashMap<Spot, Boolean> spotList;
     protected HashMap<Plane, Spot> planeList;
 
@@ -23,28 +24,16 @@ public class AirportConfig {
         // if spawn spot is a Lane
         if (s.getClass() == Lane.class) {
             // if spot is marked as empty on spotList
-            if (!spotList.get(s)) {
+            if (!s.getIsOccupied()) {
                 // mark spot as occupied on spotList + put the plane on planeList
-                spotList.put(s, true);
+                spotList.put(s, true); //TODO: remove old yucky line
+                s.setIsOccupied(true);
                 planeList.put(p, s);
             }
         }
     }
 
-    public void movePlane(Plane p, Spot s){
-        // if new spot is connected to current plane spot + if spot is empty on spotList
-        if(p.currentSpot.getConnectedSpots().contains(s) && !this.spotList.get(s)) {
-            // clear current spot on spotList
-            this.spotList.put(p.currentSpot, false);
-            // set current spot to new spot
-            p.setCurrentSpot(s);
-            planeList.put(p, s);
-            // set new spot to occupied on spotList
-            this.spotList.put(s, true);
-            //change spot attribute on plane
-            p.setCurrentSpot(s);
-        }
-    }
+
 
     public void removePlane(Plane p){
         //check if in a lane

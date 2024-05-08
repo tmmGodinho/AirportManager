@@ -1,5 +1,6 @@
 package com.airportmanager.planemanager;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Airport {
@@ -9,10 +10,19 @@ public class Airport {
     private AirportConfig westConfig;
 
     private Facing facing;
+    private Map<String, Spot> spotList;
+    private Map<String, String> wherePlaneAt;
+    private Map<String, Plane> planeList;
 
-    public Airport(AirportConfig eastConfig, AirportConfig westConfig){
-        this.eastConfig = eastConfig;
-        this.westConfig = westConfig;
+
+
+
+    public Airport(Map<String, Spot> spotList){
+        this.eastConfig = null;
+        this.westConfig = null;
+        this.spotList = spotList;
+        this.wherePlaneAt = new HashMap<>();
+        this.planeList = new HashMap<>();
     }
 
     public void setFacing(Facing facing) {
@@ -43,13 +53,17 @@ public class Airport {
     }
 
     public void populateNewPlane(Plane plane, Spot spot){
-        this.eastConfig.planeList.put(plane, spot);
-        this.westConfig.planeList.put(plane, spot);
-        for (Spot entry: this.eastConfig.spotList.keySet()) {
-            if (entry.getId().equals(spot.id)) this.eastConfig.spotList.put(entry, true);
+        for (Spot entry: this.eastConfig.spotList.keySet()){
+            if (entry.getId().equals(spot.id)){
+                this.eastConfig.spotList.put(entry, true);
+                this.eastConfig.planeList.put(plane, entry);
+            }
         }
-        for (Spot entry: this.westConfig.spotList.keySet()) {
-            if (entry.getId().equals(spot.id)) this.westConfig.spotList.put(entry, true);
+        for (Spot entry: this.westConfig.spotList.keySet()){
+            if (entry.getId().equals(spot.id)){
+                this.westConfig.spotList.put(entry, true);
+                this.westConfig.planeList.put(plane, entry);
+            }
         }
     }
 
@@ -59,17 +73,12 @@ public class Airport {
 
 
     public void print(){
-        System.out.println("Printing West Config...");
-        for (Map.Entry<Spot, Boolean> spotEntry : this.westConfig.spotList.entrySet()) {
-            Spot spot = spotEntry.getKey();
-            System.out.println(spot.getAirportType());
-            System.out.println(spot + " Connected: " + spot.getConnectedSpots());
-        }
-        System.out.println("Printing East Config...");
-        for (Map.Entry<Spot, Boolean> spotEntry : this.eastConfig.spotList.entrySet()) {
-            Spot spot = spotEntry.getKey();
-            System.out.println(spot.getAirportType());
-            System.out.println(spot + " Connected: " + spot.getConnectedSpots());
+
+        for (Map.Entry<String, Spot> spotEntry : this.spotList.entrySet()) {
+            Spot spot = spotEntry.getValue();
+            System.out.println(spot.getId());
+            System.out.println(spot.getId() + " Connected WEST: " + spot.getConnectedSpots(Facing.WEST));
+            System.out.println(spot.getId() + " Connected EAST: " + spot.getConnectedSpots(Facing.EAST));
         }
 
     }

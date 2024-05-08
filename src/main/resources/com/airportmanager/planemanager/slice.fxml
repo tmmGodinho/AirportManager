@@ -37,6 +37,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,7 +46,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="myVBox" prefHeight="703.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airportmanager.planemanager.Controller">
+<VBox fx:id="myVBox" prefHeight="727.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airportmanager.planemanager.Controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -77,9 +78,9 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="694.0" prefWidth="1242.0" VBox.vgrow="ALWAYS">
       <children>
-            <GridPane id="475" layoutX="40.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="475" layoutX="48.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -89,8 +90,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="475Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -101,9 +100,11 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="475Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="475" GridPane.columnIndex="1" />
+                  <ToggleButton id="475Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="471" layoutX="158.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="471" layoutX="158.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -125,9 +126,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="471Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="471" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="473" layoutX="85.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="473" layoutX="85.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -149,9 +151,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="473Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="473" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="463" layoutX="329.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="463" layoutX="329.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="30.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="0.0" prefWidth="60.0" />
@@ -173,9 +176,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="463Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="463" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="465" layoutX="284.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="465" layoutX="284.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -197,9 +201,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="465Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="465" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="461" layoutX="374.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="461" layoutX="393.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -221,9 +226,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="461Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="461" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="453" layoutX="531.0" layoutY="49.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="453" layoutX="531.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -245,9 +251,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="453Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="453" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="455" layoutX="497.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="455" layoutX="497.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -269,9 +276,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="455Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="455" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="451" layoutX="587.0" layoutY="117.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="451" layoutX="608.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -293,9 +301,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="451Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="451" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="466" layoutX="40.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="466" layoutX="40.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -317,9 +326,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="466Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="466" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="462" layoutX="158.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="462" layoutX="142.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -341,9 +351,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="462Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="462" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="464" layoutX="85.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="464" layoutX="85.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -365,9 +376,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="464Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="464" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="454" layoutX="329.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="454" layoutX="329.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -389,9 +401,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="454Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="454" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="456" layoutX="284.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="456" layoutX="284.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -413,9 +426,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="456Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="456" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="452" layoutX="374.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="452" layoutX="380.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -437,9 +451,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="452Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="452" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="446" layoutX="486.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="446" layoutX="493.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -461,9 +476,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="446Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="446" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="442" layoutX="587.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="442" layoutX="594.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -485,9 +501,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="442Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="442" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="444" layoutX="531.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="444" layoutX="531.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -509,9 +526,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="444Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="444" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="432" layoutX="838.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="432" layoutX="838.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -533,9 +551,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="432Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="432" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="436" layoutX="739.0" layoutY="518.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="436" layoutX="739.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -557,9 +576,10 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="436Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="436" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <GridPane id="434" layoutX="784.0" layoutY="585.0" prefHeight="52.0" prefWidth="90.0">
+            <GridPane id="434" layoutX="784.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
@@ -581,6 +601,7 @@
                         <Image url="@../../../nomeansno.png" />
                      </image>
                   </ImageView>
+                  <Button id="434Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="434" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <Button id="B18" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onAction="#laneButtonPressed" prefHeight="52.0" prefWidth="52.0" text="B18" />
@@ -638,6 +659,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
+            <ToggleButton layoutX="1024.0" layoutY="36.0" mnemonicParsing="false" text="AirportFacing" />
       </children>
     </AnchorPane>
   </children>

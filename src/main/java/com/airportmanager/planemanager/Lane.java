@@ -6,12 +6,24 @@ public class Lane extends Spot{
 
 
     public Lane(){
-        this.connectedSpots = new HashSet<>();
+        this.eastConnectedSpots = new HashSet<>();
+        this.westConnectedSpots = new HashSet<>();
+        this.isOccupied = false;
     }
 
     @Override
     public String getId() {
         return id;
+    }
+
+    @Override
+    public boolean getIsOccupied() {
+        return this.isOccupied;
+    }
+
+    @Override
+    public void setIsOccupied(boolean b) {
+        this.isOccupied = b;
     }
 
     @Override
@@ -25,13 +37,15 @@ public class Lane extends Spot{
     }
 
     @Override
-    public HashSet<Spot> getConnectedSpots() {
-        return this.connectedSpots;
+    public HashSet<Spot> getConnectedSpots(Facing facing) {
+        if(facing==Facing.WEST) return this.westConnectedSpots;
+        else return this.eastConnectedSpots;
     }
 
     @Override
-    public void addToConnectedSpots(Spot s) {
-        this.connectedSpots.add(s);
+    public void addToConnectedSpots(Spot s, Facing facing) {
+        if(facing==Facing.WEST) this.westConnectedSpots.add(s);
+        if(facing==Facing.EAST) this.eastConnectedSpots.add(s);
     }
 
 
