@@ -28,6 +28,7 @@ public class Controller {
     @FXML
     private ToggleButton airportFacingButton;
 
+    private OPCode opCode;
     private String selectedSpotId;
     private Parent root;
     private int planeCounter;
