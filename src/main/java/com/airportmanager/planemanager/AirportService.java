@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 /*
 TODO: big parking - small parking
-TODO: MAKE TESTCONFIG.JSON HAVE THE ACTUAL CONFIG
+
 
 */
 
@@ -43,13 +43,7 @@ public class AirportService extends Application {
                     
             // print airport
             airport.print();
-/*
-             for (Map.Entry<Spot, Boolean> spotEntry : airportConfig.spotList.entrySet()) {
-                Spot spot = spotEntry.getKey();
-                System.out.println(spot.getAirportType());
-                System.out.println(spot + " Connected: " + spot.getConnectedSpots());
-            }
-*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,9 +59,6 @@ public class AirportService extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("slice.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("slice.fxml"));
         Parent root = loader.load();
-
-
-
 
 
         Controller controller = loader.getController();

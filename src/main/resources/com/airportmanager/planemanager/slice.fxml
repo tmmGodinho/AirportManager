@@ -114,8 +114,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="471Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -127,6 +125,7 @@
                      </image>
                   </ImageView>
                   <Button id="471Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="471" GridPane.columnIndex="1" />
+                  <ToggleButton id="471Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="473" layoutX="85.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
@@ -139,8 +138,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="473Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -152,6 +149,7 @@
                      </image>
                   </ImageView>
                   <Button id="473Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="473" GridPane.columnIndex="1" />
+                  <ToggleButton id="473Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="463" layoutX="329.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
@@ -164,8 +162,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="463Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -177,6 +173,7 @@
                      </image>
                   </ImageView>
                   <Button id="463Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="463" GridPane.columnIndex="1" />
+                  <ToggleButton id="463Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="465" layoutX="284.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
@@ -189,8 +186,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="465Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -202,6 +197,7 @@
                      </image>
                   </ImageView>
                   <Button id="465Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="465" GridPane.columnIndex="1" />
+                  <ToggleButton id="465Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="461" layoutX="393.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
@@ -214,8 +210,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="461Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -227,6 +221,7 @@
                      </image>
                   </ImageView>
                   <Button id="461Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="461" GridPane.columnIndex="1" />
+                  <ToggleButton id="461Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="453" layoutX="531.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
@@ -239,8 +234,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="453Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -252,6 +245,7 @@
                      </image>
                   </ImageView>
                   <Button id="453Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="453" GridPane.columnIndex="1" />
+                  <ToggleButton id="453Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="455" layoutX="497.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
@@ -264,8 +258,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="455Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -277,6 +269,7 @@
                      </image>
                   </ImageView>
                   <Button id="455Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="455" GridPane.columnIndex="1" />
+                  <ToggleButton id="455Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="451" layoutX="608.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
@@ -289,8 +282,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="451Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -302,6 +293,7 @@
                      </image>
                   </ImageView>
                   <Button id="451Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="451" GridPane.columnIndex="1" />
+                  <ToggleButton id="451Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="466" layoutX="40.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -314,8 +306,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="466Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -327,6 +317,7 @@
                      </image>
                   </ImageView>
                   <Button id="466Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="466" GridPane.columnIndex="1" />
+                  <ToggleButton id="466Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="462" layoutX="142.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -339,8 +330,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="462Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -352,6 +341,7 @@
                      </image>
                   </ImageView>
                   <Button id="462Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="462" GridPane.columnIndex="1" />
+                  <ToggleButton id="462Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="464" layoutX="85.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
@@ -364,8 +354,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="464Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -377,6 +365,7 @@
                      </image>
                   </ImageView>
                   <Button id="464Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="464" GridPane.columnIndex="1" />
+                  <ToggleButton id="464Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="454" layoutX="329.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
@@ -389,8 +378,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -402,6 +389,7 @@
                      </image>
                   </ImageView>
                   <Button id="454Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="454" GridPane.columnIndex="1" />
+                  <ToggleButton id="454Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="456" layoutX="284.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -414,8 +402,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="456Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -427,6 +413,7 @@
                      </image>
                   </ImageView>
                   <Button id="456Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="456" GridPane.columnIndex="1" />
+                  <ToggleButton id="456Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="452" layoutX="380.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -439,8 +426,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -452,6 +437,7 @@
                      </image>
                   </ImageView>
                   <Button id="452Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="452" GridPane.columnIndex="1" />
+                  <ToggleButton id="452Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="446" layoutX="493.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -464,8 +450,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -477,6 +461,7 @@
                      </image>
                   </ImageView>
                   <Button id="446Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="446" GridPane.columnIndex="1" />
+                  <ToggleButton id="446Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="442" layoutX="594.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -489,8 +474,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -502,6 +485,7 @@
                      </image>
                   </ImageView>
                   <Button id="442Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="442" GridPane.columnIndex="1" />
+                  <ToggleButton id="442Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="444" layoutX="531.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
@@ -514,8 +498,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -527,6 +509,7 @@
                      </image>
                   </ImageView>
                   <Button id="444Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="444" GridPane.columnIndex="1" />
+                  <ToggleButton id="444Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="432" layoutX="838.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -539,8 +522,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -552,6 +533,7 @@
                      </image>
                   </ImageView>
                   <Button id="432Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="432" GridPane.columnIndex="1" />
+                  <ToggleButton id="432Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="436" layoutX="739.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
@@ -564,8 +546,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -577,6 +557,7 @@
                      </image>
                   </ImageView>
                   <Button id="436Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="436" GridPane.columnIndex="1" />
+                  <ToggleButton id="436Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane id="434" layoutX="784.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
@@ -589,8 +570,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" minWidth="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="E" />
-                  <Button alignment="CENTER" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" text="W" GridPane.rowIndex="1" />
                   <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
                         <Image url="@../../../plane.png" />
@@ -602,6 +581,7 @@
                      </image>
                   </ImageView>
                   <Button id="434Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="434" GridPane.columnIndex="1" />
+                  <ToggleButton id="434Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <Button id="B18" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onAction="#laneButtonPressed" prefHeight="52.0" prefWidth="52.0" text="B18" />
@@ -659,7 +639,9 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ToggleButton layoutX="1024.0" layoutY="36.0" mnemonicParsing="false" text="AirportFacing" />
+            <ToggleButton fx:id="airportFacingButton" layoutX="1140.0" layoutY="14.0" mnemonicParsing="false" text="AirportFacing" />
+            <ToggleButton id="CreateAirplane" fx:id="createPlaneButton" layoutX="1130.0" layoutY="48.0" mnemonicParsing="false" onAction="#createPlaneButtonPressed" text="Create Airplane" />
+            <ToggleButton id="DeleteAirplane" fx:id="deletePlaneButton" layoutX="1130.0" layoutY="82.0" mnemonicParsing="false" onAction="#deletePlaneButtonPressed" text="Delete Airplane" />
       </children>
     </AnchorPane>
   </children>
