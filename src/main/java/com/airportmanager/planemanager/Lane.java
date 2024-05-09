@@ -12,6 +12,10 @@ public class Lane extends Spot{
     }
 
     @Override
+    public String toString(){
+        return "Lane[" + this.id + "]";
+    }
+    @Override
     public String getId() {
         return id;
     }

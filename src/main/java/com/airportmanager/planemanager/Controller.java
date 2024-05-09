@@ -28,6 +28,7 @@ public class Controller {
     @FXML
     private ToggleButton airportFacingButton;
 
+    private String selectedSpotId;
     private Parent root;
     private int planeCounter;
 
@@ -61,10 +62,8 @@ public class Controller {
     //phase 1
     //TODO: finish deserializer + .json forever(tm)
     //TODO: spawn airplane (1/2 done, missing discriminator condition [which bp according to facing + all parks])
-    //TODO: make airplane move
-    //TODO: delete airplane
+
     //phase 2
-    //TODO: cluster parkings
 
     @FXML
     public void createPlaneButtonPressed(javafx.event.ActionEvent actionEvent){
@@ -78,8 +77,21 @@ public class Controller {
 
     @FXML
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
-        if(createPlaneButton.isSelected()) spawnAirplane(actionEvent);
-        if(deletePlaneButton.isSelected()) deleteAirplane(actionEvent);
+        //save spotId when isOccupied
+        String buttonId = this.getLaneButtonLocation(actionEvent);
+        Spot planeSpot = airport.getSpotList().get(buttonId);
+
+        if(createPlaneButton.isSelected()) {
+            spawnAirplane(actionEvent);
+        }
+        if(deletePlaneButton.isSelected()) {
+            deleteAirplane(actionEvent);
+        }
+        if(selectedSpotId!=null) moveAirplane(actionEvent);
+        else if (planeSpot.isOccupied){
+            selectedSpotId = planeSpot.getId();
+        }
+        selectedSpotId = null;
     }
 
 
@@ -90,12 +102,9 @@ public class Controller {
 
     public void spawnAirplane(javafx.event.ActionEvent actionEvent){
         Button button = (Button) actionEvent.getSource();
-        String planeID = "#" + button.getText() + "Plane";
-        //myVBox.lookup(planeID); planeID has to start with #
+        String planeID = "#" + button.getText() + "Plane"; //myVBox.lookup(planeID); planeID has to start with #
         String buttonId = this.getLaneButtonLocation(actionEvent);
-        //TODO: change whichConfig
-        //TODO: spawn plane
-        //check airport config spotlist for same id as button to see if there is a plane there
+        //check airport spotlist for same id as button to see if there is a plane there
         Spot planeSpot = airport.getSpotList().get(buttonId);
         if (!planeSpot.equals(null)) {
             //spawn plane in buttonId Spot
@@ -111,16 +120,31 @@ public class Controller {
         String buttonId = this.getLaneButtonLocation(actionEvent);
         Spot planeSpot = airport.getSpotList().get(buttonId);
         String planeIdToRemove = airport.getWherePlaneAt().get(planeSpot.id);
-        //check if spot has a plane TODO:proper delete conditions
-        if(planeSpot.isOccupied) { //check if delete is legal
+        //check if spot has a plane TODO:proper delete conditions (parking or PB edge according to Facing)
+        if(planeSpot.getIsOccupied()) { //check if delete is legal
             Plane planeToRemove = airport.getPlaneList().get(planeIdToRemove);
             //delete from planeList and wherePlaneAt
             airport.removePlane(planeToRemove, planeSpot);
-            //TODO:make picture invisible
             //make picture invis
             myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
         }
     }
 
+    //TODO: make airplane move
+    //TODO:every click checks if lastSelection, if not, set to true
+    //TODO:set operation Label
+    //TODO:make movement paths visible, crosses for disrupted connectedSpots
+    //click 2
+    //TODO:if move is legal: set fromSpot isOccupied to False, set toSpot isOccupied to True
+    //                  call airport.movePlane for airport guts rearrange
+    //                  make fromSpotPlane invis, set toSpotPlane to visible
+
+    public void moveAirplane(javafx.event.ActionEvent actionEvent){
+
+    }
+//check if spot is a legal move (connectedlists)
+    //check if spot isOccupied
+    //if all good call airport.moveAirplane
+    //make fromPicture invis and toPicture visible
 
 }

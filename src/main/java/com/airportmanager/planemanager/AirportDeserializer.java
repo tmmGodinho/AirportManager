@@ -32,6 +32,10 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
         JsonObject westObject = (JsonObject) jsonObject.get("west_connections");
 
         genConnections(spotMap, eastObject, westObject);
+        if(jsonObject.has("constrained_parking")){
+            JsonObject constrainedParkingObject = (JsonObject) jsonObject.get("constrained_parking");
+            genConstraints(spotMap, constrainedParkingObject);
+        }
         return new Airport(spotMap);
     }
 
@@ -75,7 +79,19 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
         }
 
     }
-    
-    
+
+    private void genConstraints(Map<String, Spot> spotMap, JsonObject constrainedParkingObject){
+        for (String fromKey : constrainedParkingObject.keySet()) {
+            Parking parkingFrom = (Parking)spotMap.get(fromKey);
+            JsonArray parkingConstraints = (JsonArray) constrainedParkingObject.get(fromKey);
+            Iterator<JsonElement> it = parkingConstraints.iterator();
+            while (it.hasNext()){
+                String toKey = it.next().getAsString();
+                Parking parkingTo = (Parking) spotMap.get(toKey);
+                parkingFrom.addToConstrainedParking(toKey);
+                parkingTo.addToConstrainedParking(fromKey);
+            }
+        }
+    }
 
 }

@@ -61,15 +61,22 @@ public class Airport {
         planeList.remove(plane.id);
     }
 
-    public void changeConfig(){
-        //TODO: this should transfer active planes from active config to new config
-    }
+    public void movePlane(Plane plane, Spot spot){
+//    fromSpot isOccupied to false
+//    toSpot isOccupied to true
+//    update spotId in wherePlaneAt
 
+
+    }
 
     public void print(){
         for (Map.Entry<String, Spot> spotEntry : this.spotList.entrySet()) {
             Spot spot = spotEntry.getValue();
             System.out.println(spot.getId());
+            if(spot.getClass() == Parking.class){
+                Parking parking = (Parking) spot;
+                System.out.println("Parking constraint IDs: " + parking.getConstrainedParkingIds());
+            }
             System.out.println(spot.getId() + " Connected WEST: " + spot.getConnectedSpots(Facing.WEST));
             System.out.println(spot.getId() + " Connected EAST: " + spot.getConnectedSpots(Facing.EAST));
         }

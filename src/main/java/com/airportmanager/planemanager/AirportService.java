@@ -14,16 +14,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/*
-TODO: big parking - small parking
-
-
-*/
 
 
 
 public class AirportService extends Application {
-//disgusting
+
+    //disgusting
     private static Airport airportToGUI;
 
     public static void main ( String[] args )
