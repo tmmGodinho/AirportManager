@@ -27,6 +27,8 @@ public class Controller {
     private ToggleButton deletePlaneButton;
     @FXML
     private ToggleButton airportFacingButton;
+    @FXML
+    private ToggleButton movePlaneButton;
 
     private OPCode opCode;
     private String selectedSpotId;
@@ -69,10 +71,16 @@ public class Controller {
     @FXML
     public void createPlaneButtonPressed(javafx.event.ActionEvent actionEvent){
         if(deletePlaneButton.isSelected()) deletePlaneButton.setSelected(false);
+        if(movePlaneButton.isSelected()) movePlaneButton.setSelected(false);
     }
-
     @FXML
     public void deletePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
+        if(createPlaneButton.isSelected()) createPlaneButton.setSelected(false);
+        if(movePlaneButton.isSelected()) movePlaneButton.setSelected(false);
+    }
+    @FXML
+    public void movePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
+        if(deletePlaneButton.isSelected()) deletePlaneButton.setSelected(false);
         if(createPlaneButton.isSelected()) createPlaneButton.setSelected(false);
     }
 
