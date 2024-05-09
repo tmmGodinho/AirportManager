@@ -67,7 +67,7 @@ public class Controller {
         //TODO: change whichConfig
         //TODO: spawn plane
         //check airport config spotlist for same id as button to see if there is a plane there
-        Spot planeSpot = airport.getSpotFromId(buttonId);
+        Spot planeSpot = airport.getSpotList().get(buttonId);
         if(!planeSpot.equals(null)) {
             //spawn plane in buttonId Spot
             Plane newPlane = new Plane("Plane" + planeCounter, planeSpot, airport.getFacing());
