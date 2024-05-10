@@ -114,7 +114,7 @@ public class Controller {
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
         //save spotId when isOccupied
         String buttonId = this.getLaneButtonLocation(actionEvent);
-        Spot planeSpot = airport.getSpotList().get(buttonId);
+        Spot planeSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
         switch (opCode){
             case NONE:
                 break;

@@ -48,7 +48,7 @@ public class Airport {
         // if spawn spot is a Lane
         // if spot is marked as empty on spotList
         // mark spot as occupied on spotList + put the plane on planeList
-        if(spot.getClass() == Lane.class && !spot.isOccupied){
+        if(!spot.isOccupied){
             spot.setIsOccupied(true);
             wherePlaneAt.put(spot.getId(),plane.getId());
             planeList.put(plane.getId(), plane);
