@@ -1,5 +1,6 @@
 package com.airportmanager.planemanager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class Airport {
     private Facing facing;
     private Map<String, Spot> spotList;     //spotId, Spot
 
-    private Map<String, String> wherePlaneAt;  //spotId , PlaneId
+    private Map<String, String> wherePlaneAt;  // PlaneId, spotId
 
     private Map<String, Plane> planeList;  // planeId, Plane
 
@@ -49,16 +50,16 @@ public class Airport {
         // mark spot as occupied on spotList + put the plane on planeList
         if(spot.getClass() == Lane.class && !spot.isOccupied){
             spot.setIsOccupied(true);
-            wherePlaneAt.put(spot.id, plane.id);
+            wherePlaneAt.put(plane.id,spot.id);
             planeList.put(plane.id, plane);
         }
     }
 
-    public void removePlane(Plane plane, Spot spot){
+    public void removePlane(Plane plane){
         //delete from planeList and wherePlaneAt and set spot isOccupied to false
-        wherePlaneAt.remove(spot.id);
-        spot.setIsOccupied(false);
-        planeList.remove(plane.id);
+        spotList.get(wherePlaneAt.get(plane.getId())).setIsOccupied(false);
+        wherePlaneAt.remove(plane.getId());
+        planeList.remove(plane.getId());
     }
 
     public void movePlane(Plane plane, Spot spot){
@@ -67,6 +68,16 @@ public class Airport {
 //    update spotId in wherePlaneAt
 
 
+    }
+
+//    ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
+
+    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane
+        for (String planeID : planeList.keySet()){
+            if(spotList.get(wherePlaneAt.get(planeID)).getClass() == Parking.class){
+                planeList.get(planeID).switchFacing();
+            }
+        }
     }
 
     public void print(){

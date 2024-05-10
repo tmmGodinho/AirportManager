@@ -4,9 +4,6 @@ import java.util.HashSet;
 
 public class Parking extends Spot{
 
-    //TODO:make tostring to make ricky happy :) format "Lane[315]"
-
-
 
     private HashSet<String> constrainedParkingIds;
 
@@ -16,18 +13,6 @@ public class Parking extends Spot{
         this.constrainedParkingIds = new HashSet<>();
         this.isOccupied = false;
     }
-
-
-//    protected String id;
-//    protected HashSet<Spot> eastConnectedSpots;
-//    protected HashSet<Spot> westConnectedSpots;
-//
-//
-//
-//    protected boolean isOccupied;
-//
-
-
 
     @Override
     public String toString(){

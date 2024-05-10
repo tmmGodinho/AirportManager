@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 
 public class AirportService extends Application {
 
+
+
     //disgusting
     private static Airport airportToGUI;
 
@@ -33,7 +35,6 @@ public class AirportService extends Application {
             Airport airport = gson.fromJson(reader, Airport.class);
 
             // Save airport as attribute to pass to GUi
-//            TODO:fix facing init
             airport.setFacing(Facing.WEST);
             setAirport(airport);
                     
@@ -59,6 +60,8 @@ public class AirportService extends Application {
 
         Controller controller = loader.getController();
         controller.setAirport(airportToGUI);
+        controller.setOpCode(OPCode.NONE);
+        controller.getAirportFacingButton().setText(getAirportToGUI().getFacing().toString());
 
         Scene scene = new Scene(root);
         stage.setTitle("Hello!");
@@ -69,7 +72,9 @@ public class AirportService extends Application {
     public static void setAirport(Airport airport){
         airportToGUI = airport;
     }
-
+    public static Airport getAirportToGUI() {
+        return airportToGUI;
+    }
 }
 
 

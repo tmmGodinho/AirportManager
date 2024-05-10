@@ -640,11 +640,11 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ToggleButton fx:id="airportFacingButton" layoutX="1140.0" layoutY="14.0" mnemonicParsing="false" text="AirportFacing" />
+            <ToggleButton fx:id="airportFacingButton" layoutX="1130.0" layoutY="14.0" mnemonicParsing="false" onAction="#airportFacingButtonPressed" prefHeight="25.0" prefWidth="98.0" text="AirportFacing" />
             <ToggleButton id="CreateAirplane" fx:id="createPlaneButton" layoutX="1130.0" layoutY="48.0" mnemonicParsing="false" onAction="#createPlaneButtonPressed" text="Create Airplane" />
             <ToggleButton id="DeleteAirplane" fx:id="deletePlaneButton" layoutX="1130.0" layoutY="82.0" mnemonicParsing="false" onAction="#deletePlaneButtonPressed" text="Delete Airplane" />
             <ToggleButton fx:id="movePlaneButton" layoutX="1130.0" layoutY="117.0" mnemonicParsing="false" onAction="#movePlaneButtonPressed" prefHeight="25.0" prefWidth="98.0" text="Move Airplane" />
-            <Label layoutX="1057.0" layoutY="18.0" text="Airport Facing" />
+            <Label layoutX="1043.0" layoutY="18.0" text="Airport Facing" />
       </children>
     </AnchorPane>
   </children>

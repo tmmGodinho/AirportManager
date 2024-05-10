@@ -30,15 +30,12 @@ public class Controller {
     @FXML
     private ToggleButton movePlaneButton;
 
+
+
     private OPCode opCode;
     private String selectedSpotId;
     private Parent root;
     private int planeCounter;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
 
     public void thisWorks(javafx.event.ActionEvent actionEvent) {
@@ -52,7 +49,15 @@ public class Controller {
     public void setRoot(Parent root){
         this.root = root;
     }
-
+    public void setOpCode(OPCode opCode) {
+        this.opCode = opCode;
+    }
+    public OPCode getOpCode() {
+        return opCode;
+    }
+    public ToggleButton getAirportFacingButton() {
+        return airportFacingButton;
+    }
     public void printAirport(){
         this.airport.print();
     }
@@ -83,6 +88,18 @@ public class Controller {
         if(deletePlaneButton.isSelected()) deletePlaneButton.setSelected(false);
         if(createPlaneButton.isSelected()) createPlaneButton.setSelected(false);
     }
+    @FXML
+    public void airportFacingButtonPressed(javafx.event.ActionEvent actionEvent){  //Switch Airport Facing + change Parked Facings
+        if(airport.getFacing() == Facing.WEST){
+            airport.setFacing(Facing.EAST);
+            airportFacingButton.setText(airport.getFacing().toString());
+        }
+        else{
+            airport.setFacing(Facing.WEST);
+            airportFacingButton.setText(airport.getFacing().toString());
+        }
+        airport.changeParkedPlaneFacings();
+    }
 
     @FXML
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
@@ -96,11 +113,11 @@ public class Controller {
         if(deletePlaneButton.isSelected()) {
             deleteAirplane(actionEvent);
         }
-        if(selectedSpotId!=null) moveAirplane(actionEvent);
-        else if (planeSpot.isOccupied){
-            selectedSpotId = planeSpot.getId();
-        }
-        selectedSpotId = null;
+//        if(selectedSpotId!=null) moveAirplane(actionEvent);
+//        else if (planeSpot.isOccupied){
+//            selectedSpotId = planeSpot.getId();
+//        }
+//        selectedSpotId = null;
     }
 
 
@@ -129,11 +146,11 @@ public class Controller {
         String buttonId = this.getLaneButtonLocation(actionEvent);
         Spot planeSpot = airport.getSpotList().get(buttonId);
         String planeIdToRemove = airport.getWherePlaneAt().get(planeSpot.id);
-        //check if spot has a plane TODO:proper delete conditions (parking or PB edge according to Facing)
+        //check if spot has a plane
         if(planeSpot.getIsOccupied()) { //check if delete is legal
             Plane planeToRemove = airport.getPlaneList().get(planeIdToRemove);
             //delete from planeList and wherePlaneAt
-            airport.removePlane(planeToRemove, planeSpot);
+            airport.removePlane(planeToRemove);
             //make picture invis
             myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
         }
@@ -154,6 +171,21 @@ public class Controller {
 //check if spot is a legal move (connectedlists)
     //check if spot isOccupied
     //if all good call airport.moveAirplane
+
+    public void changeParkedPlanesFacing(){ //TODO: update Facing buttons on all parked planes
+        //check airport.planelist
+        //check wherePlaneAt to see if Park   ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
+        //find key in wherePlaneAt
+        //check if key object is park
+        //if park, change facing
+
+//        for (String planeID : airport.getPlaneList().keySet()){
+//            if(airport.getSpotList().get(airport.getWherePlaneAt().get(planeID)).getClass() == Parking.class)
+//        }
+
+    }
     //make fromPicture invis and toPicture visible
+
+
 
 }
