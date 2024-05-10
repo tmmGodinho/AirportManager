@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class Controller {
     @FXML
-    private Label welcomeText;
+    private Label currentOperation;
     @FXML
     private Airport airport;
     @FXML
@@ -29,6 +29,7 @@ public class Controller {
     private ToggleButton airportFacingButton;
     @FXML
     private ToggleButton movePlaneButton;
+
 
 
 
@@ -50,8 +51,12 @@ public class Controller {
         this.root = root;
     }
     public void setOpCode(OPCode opCode) {
+        if(!currentOperation.isVisible()) currentOperation.setVisible(true);
         this.opCode = opCode;
+        currentOperation.setText(opCode.toString());
+        if(opCode == OPCode.NONE) currentOperation.setVisible(false);
     }
+
     public OPCode getOpCode() {
         return opCode;
     }
@@ -68,25 +73,29 @@ public class Controller {
 
 
     //phase 1
-    //TODO: finish deserializer + .json forever(tm)
-    //TODO: spawn airplane (1/2 done, missing discriminator condition [which bp according to facing + all parks])
+    //TODO: implement OPCODE change on ToggleButton Presses
+    //TODO: implement currentOPCODE (label)
+    //TODO: properly sided plane.pngs
+    //TODO: bling it up with Facing Color + Lines on Select
 
     //phase 2
 
     @FXML
     public void createPlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        if(deletePlaneButton.isSelected()) deletePlaneButton.setSelected(false);
-        if(movePlaneButton.isSelected()) movePlaneButton.setSelected(false);
+        setOpCode(OPCode.CREATE);
+        unselectToggles();
     }
+
     @FXML
     public void deletePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        if(createPlaneButton.isSelected()) createPlaneButton.setSelected(false);
-        if(movePlaneButton.isSelected()) movePlaneButton.setSelected(false);
+        setOpCode(OPCode.DELETE);
+        unselectToggles();
+
     }
     @FXML
     public void movePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        if(deletePlaneButton.isSelected()) deletePlaneButton.setSelected(false);
-        if(createPlaneButton.isSelected()) createPlaneButton.setSelected(false);
+        setOpCode(OPCode.SELECT);
+        unselectToggles();
     }
     @FXML
     public void airportFacingButtonPressed(javafx.event.ActionEvent actionEvent){  //Switch Airport Facing + change Parked Facings
@@ -106,20 +115,37 @@ public class Controller {
         //save spotId when isOccupied
         String buttonId = this.getLaneButtonLocation(actionEvent);
         Spot planeSpot = airport.getSpotList().get(buttonId);
-
-        if(createPlaneButton.isSelected()) {
-            spawnAirplane(actionEvent);
-        }
-        if(deletePlaneButton.isSelected()) {
-            deleteAirplane(actionEvent);
+        switch (opCode){
+            case NONE:
+                break;
+            case MOVE:
+                break;
+            case CREATE:
+                spawnAirplane(actionEvent);
+                break;
+            case DELETE:
+                deleteAirplane(actionEvent);
+                break;
+            case SELECT:
+                break;
         }
 //        if(selectedSpotId!=null) moveAirplane(actionEvent);
+//    NONE,
+//    CREATE,
+//    SELECT,
+//    MOVE,
+//    DELETE
 //        else if (planeSpot.isOccupied){
 //            selectedSpotId = planeSpot.getId();
 //        }
 //        selectedSpotId = null;
     }
 
+    private void unselectToggles(){
+        if (opCode != OPCode.CREATE) createPlaneButton.setSelected(false);
+        if (opCode != OPCode.SELECT || opCode != OPCode.MOVE )movePlaneButton.setSelected(false);
+        if (opCode != OPCode.DELETE) createPlaneButton.setSelected(false);
+    }
 
     public String getLaneButtonLocation(javafx.event.ActionEvent actionEvent){
         Button button = (Button)actionEvent.getSource();
@@ -132,7 +158,7 @@ public class Controller {
         String buttonId = this.getLaneButtonLocation(actionEvent);
         //check airport spotlist for same id as button to see if there is a plane there
         Spot planeSpot = airport.getSpotList().get(buttonId);
-        if (!planeSpot.equals(null)) {
+        if (!planeSpot.equals(null) && !planeSpot.getIsOccupied()) {
             //spawn plane in buttonId Spot
             Plane newPlane = new Plane("Plane" + planeCounter, planeSpot, airport.getFacing());
             planeCounter++;
@@ -150,7 +176,7 @@ public class Controller {
         if(planeSpot.getIsOccupied()) { //check if delete is legal
             Plane planeToRemove = airport.getPlaneList().get(planeIdToRemove);
             //delete from planeList and wherePlaneAt
-            airport.removePlane(planeToRemove);
+            airport.removePlane(planeToRemove, planeSpot);
             //make picture invis
             myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
         }

@@ -6,12 +6,12 @@ import java.util.Map;
 
 public class Airport {
 
-
+//TODO: revert wherePlaneAt + for loop changeParkedFacings (we brute force those)
 
     private Facing facing;
     private Map<String, Spot> spotList;     //spotId, Spot
 
-    private Map<String, String> wherePlaneAt;  // PlaneId, spotId
+    private Map<String, String> wherePlaneAt;  //  spotId, PlaneId
 
     private Map<String, Plane> planeList;  // planeId, Plane
 
@@ -50,14 +50,14 @@ public class Airport {
         // mark spot as occupied on spotList + put the plane on planeList
         if(spot.getClass() == Lane.class && !spot.isOccupied){
             spot.setIsOccupied(true);
-            wherePlaneAt.put(plane.id,spot.id);
-            planeList.put(plane.id, plane);
+            wherePlaneAt.put(spot.getId(),plane.getId());
+            planeList.put(plane.getId(), plane);
         }
     }
 
-    public void removePlane(Plane plane){
+    public void removePlane(Plane plane,Spot spot){
         //delete from planeList and wherePlaneAt and set spot isOccupied to false
-        spotList.get(wherePlaneAt.get(plane.getId())).setIsOccupied(false);
+        spot.setIsOccupied(false);
         wherePlaneAt.remove(plane.getId());
         planeList.remove(plane.getId());
     }
@@ -72,12 +72,12 @@ public class Airport {
 
 //    ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
 
-    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane
-        for (String planeID : planeList.keySet()){
-            if(spotList.get(wherePlaneAt.get(planeID)).getClass() == Parking.class){
-                planeList.get(planeID).switchFacing();
-            }
-        }
+    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane  TODO:brute (for)ce here
+//        for (String planeID : planeList.keySet()){
+//            if(spotList.get(wherePlaneAt.get(planeID)).getClass() == Parking.class){
+//                planeList.get(planeID).switchFacing();
+//            }
+//        }
     }
 
     public void print(){
