@@ -189,6 +189,11 @@ public class Controller {
             airport.removePlane(planeToRemove, planeSpot);
             //make picture invis
             myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
+            //update plane facing button
+            if (planeSpot.getClass() == Parking.class) {
+                ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
+                planeFacingButton.setText("");
+            }
         }
     }
 
