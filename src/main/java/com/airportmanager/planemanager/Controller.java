@@ -229,8 +229,7 @@ public class Controller {
     }
 
     public void updatePlaneFacingButton(String planeId){
-        String spotId = airport.planeToSpot(planeId);
-        ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + spotId + "Facing");
+        ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + airport.planeToSpot(planeId) + "Facing");
         planeFacingButton.setText(shortenFacing(airport.getPlaneList().get(planeId).getFacing()));
     }
 
