@@ -68,13 +68,22 @@ public class Airport {
 
 //    ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
 
-    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane  TODO:brute (for)ce here
-//        for (String planeID : planeList.keySet()){
-//            if(spotList.get(wherePlaneAt.get(planeID)).getClass() == Parking.class){
-//                planeList.get(planeID).switchFacing();
-//            }
-//        }
+    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane  TODO:brute (for)ce here + update planeFacing buttons
+        for (String planeID : planeList.keySet()){
+           if(spotList.get(planeToSpot(planeID)).getClass() == Parking.class){
+               planeList.get(planeID).switchFacing();
+           }
+        }
     }
+
+    public String planeToSpot(String planeId){ //returns which spotID the plane is at
+        String thisOne = "";
+        for(String spotId : wherePlaneAt.keySet()){
+            if(wherePlaneAt.get(spotId).equals(planeId)) thisOne = spotId;
+        }
+        return thisOne;
+    }
+
 
     public void print(){
         for (Map.Entry<String, Spot> spotEntry : this.spotList.entrySet()) {

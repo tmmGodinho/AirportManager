@@ -76,7 +76,7 @@ public class Controller {
     //TODO: implement moveAirplane
     //TODO: implement SelectAirplane
     //TODO: properly sided plane.pngs
-    //TODO: bling it up with Facing Color + Lines on Select
+    //TODO: bling it up with Facing Color + Lines on Select + selected plane circle.png
 
     //phase 2
 
@@ -110,6 +110,7 @@ public class Controller {
             airportFacingButton.setText(airport.getFacing().toString());
         }
         airport.changeParkedPlaneFacings();
+        updatePlaneFacingButtons();
     }
 
     @FXML
@@ -133,16 +134,6 @@ public class Controller {
                 selectAirplane(clickedSpot);
                 break;
         }
-//        if(selectedSpotId!=null) moveAirplane(actionEvent);
-//    NONE,
-//    CREATE,
-//    SELECT,
-//    MOVE,
-//    DELETE
-//        else if (planeSpot.isOccupied){
-//            selectedSpotId = planeSpot.getId();
-//        }
-//        selectedSpotId = null;
     }
 
 
@@ -228,6 +219,20 @@ public class Controller {
 
     }
     //make fromPicture invis and toPicture visible
+
+    public void updatePlaneFacingButtons(){
+        for(String planeId : airport.getPlaneList().keySet()){
+                if(airport.getSpotList().get(airport.planeToSpot(planeId)).getClass() == Parking.class) {
+                    updatePlaneFacingButton(planeId);
+                }
+        }
+    }
+
+    public void updatePlaneFacingButton(String planeId){
+        String spotId = airport.planeToSpot(planeId);
+        ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + spotId + "Facing");
+        planeFacingButton.setText(shortenFacing(airport.getPlaneList().get(planeId).getFacing()));
+    }
 
     public String shortenFacing(Facing facing){
         if (facing == Facing.EAST) return "E";
