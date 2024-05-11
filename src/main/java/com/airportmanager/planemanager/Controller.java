@@ -73,6 +73,8 @@ public class Controller {
 
 
     //phase 1
+    //TODO: implement moveAirplane
+    //TODO: implement SelectAirplane
     //TODO: implement OPCODE change on ToggleButton Presses
     //TODO: implement currentOPCODE (label)
     //TODO: properly sided plane.pngs
@@ -111,7 +113,7 @@ public class Controller {
     }
 
     @FXML
-    public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
+    public void laneButtonPressed(javafx.event.ActionEvent actionEvent){ //TODO: SET OPCODE TO NONE WHEN RECLICKING BUTTON
         //save spotId when isOccupied
         String buttonId = this.getLaneButtonLocation(actionEvent);
         Spot clickedSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
@@ -119,6 +121,7 @@ public class Controller {
             case NONE:
                 break;
             case MOVE:
+                moveAirplane(clickedSpot);
                 break;
             case CREATE:
                 spawnAirplane(actionEvent);
@@ -155,9 +158,8 @@ public class Controller {
         return button.getId();
     }
 
-    private void selectAirplane(Spot clickedSpot) {
-    }
-    public void spawnAirplane(javafx.event.ActionEvent actionEvent){
+
+    public void spawnAirplane(javafx.event.ActionEvent actionEvent){ //TODO:if spot is parking, update facing button
         String buttonId = this.getLaneButtonLocation(actionEvent);
         //check airport spotlist for same id as button to see if there is a plane there
         Spot planeSpot = airport.getSpotList().get(buttonId);
@@ -168,6 +170,11 @@ public class Controller {
             airport.populateNewPlane(newPlane, planeSpot);
             //make plane.png appear
             myVBox.lookup("#" + buttonId + "Plane").setVisible(true);
+            //update plane facing button
+            if (planeSpot.getClass() == Parking.class) {
+                ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
+                planeFacingButton.setText(shortenFacing(newPlane.getFacing()));
+            }
         }
     }
 
@@ -185,6 +192,8 @@ public class Controller {
         }
     }
 
+    private void selectAirplane(Spot clickedSpot) {
+    }
     //TODO: make airplane move
     //TODO:every click checks if lastSelection, if not, set to true
     //TODO:set operation Label
@@ -194,7 +203,7 @@ public class Controller {
     //                  call airport.movePlane for airport guts rearrange
     //                  make fromSpotPlane invis, set toSpotPlane to visible
 
-    public void moveAirplane(javafx.event.ActionEvent actionEvent){
+    public void moveAirplane(Spot clickedSpot){
 
     }
 //check if spot is a legal move (connectedlists)
@@ -215,6 +224,9 @@ public class Controller {
     }
     //make fromPicture invis and toPicture visible
 
-
+    public String shortenFacing(Facing facing){
+        if (facing == Facing.EAST) return "E";
+        else return "W";
+    }
 
 }
