@@ -44,15 +44,11 @@ public class Airport {
         return planeList;
     }
 
-    public void populateNewPlane(Plane plane, Spot spot){
-        // if spawn spot is a Lane
-        // if spot is marked as empty on spotList
-        // mark spot as occupied on spotList + put the plane on planeList
-        if(!spot.isOccupied){
+    public void populateNewPlane(Plane plane, Spot spot){  // mark spot as occupied on spotList + put the plane on planeList
+
             spot.setIsOccupied(true);
             wherePlaneAt.put(spot.getId(),plane.getId());
             planeList.put(plane.getId(), plane);
-        }
     }
 
     public void removePlane(Plane plane,Spot spot){

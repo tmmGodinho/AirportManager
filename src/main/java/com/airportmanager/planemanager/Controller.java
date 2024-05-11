@@ -114,7 +114,7 @@ public class Controller {
     public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
         //save spotId when isOccupied
         String buttonId = this.getLaneButtonLocation(actionEvent);
-        Spot planeSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
+        Spot clickedSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
         switch (opCode){
             case NONE:
                 break;
@@ -127,6 +127,7 @@ public class Controller {
                 deleteAirplane(actionEvent);
                 break;
             case SELECT:
+                selectAirplane(clickedSpot);
                 break;
         }
 //        if(selectedSpotId!=null) moveAirplane(actionEvent);
@@ -141,10 +142,12 @@ public class Controller {
 //        selectedSpotId = null;
     }
 
+
+
     private void unselectToggles(){
         if (opCode != OPCode.CREATE) createPlaneButton.setSelected(false);
-        if (opCode != OPCode.SELECT || opCode != OPCode.MOVE )movePlaneButton.setSelected(false);
-        if (opCode != OPCode.DELETE) createPlaneButton.setSelected(false);
+        if (opCode != OPCode.SELECT) movePlaneButton.setSelected(false);
+        if (opCode != OPCode.DELETE) deletePlaneButton.setSelected(false);
     }
 
     public String getLaneButtonLocation(javafx.event.ActionEvent actionEvent){
@@ -152,9 +155,9 @@ public class Controller {
         return button.getId();
     }
 
+    private void selectAirplane(Spot clickedSpot) {
+    }
     public void spawnAirplane(javafx.event.ActionEvent actionEvent){
-        Button button = (Button) actionEvent.getSource();
-        String planeID = "#" + button.getText() + "Plane"; //myVBox.lookup(planeID); planeID has to start with #
         String buttonId = this.getLaneButtonLocation(actionEvent);
         //check airport spotlist for same id as button to see if there is a plane there
         Spot planeSpot = airport.getSpotList().get(buttonId);
