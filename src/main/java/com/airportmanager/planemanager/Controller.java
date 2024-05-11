@@ -51,7 +51,7 @@ public class Controller {
         this.root = root;
     }
     public void setOpCode(OPCode opCode) {
-        if(!currentOperation.isVisible()) currentOperation.setVisible(true);
+        if(!currentOperation.isVisible()) currentOperation.setVisible(true); //boot condition
         this.opCode = opCode;
         currentOperation.setText(opCode.toString());
         if(opCode == OPCode.NONE) currentOperation.setVisible(false);
@@ -75,8 +75,6 @@ public class Controller {
     //phase 1
     //TODO: implement moveAirplane
     //TODO: implement SelectAirplane
-    //TODO: implement OPCODE change on ToggleButton Presses
-    //TODO: implement currentOPCODE (label)
     //TODO: properly sided plane.pngs
     //TODO: bling it up with Facing Color + Lines on Select
 
@@ -84,19 +82,21 @@ public class Controller {
 
     @FXML
     public void createPlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        setOpCode(OPCode.CREATE);
+        if(opCode == OPCode.CREATE) setOpCode(OPCode.NONE);
+        else setOpCode(OPCode.CREATE);
         unselectToggles();
     }
 
     @FXML
     public void deletePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        setOpCode(OPCode.DELETE);
+        if(opCode == OPCode.DELETE) setOpCode(OPCode.NONE);
+        else setOpCode(OPCode.DELETE);
         unselectToggles();
-
     }
     @FXML
     public void movePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
-        setOpCode(OPCode.SELECT);
+        if(opCode == OPCode.SELECT) setOpCode(OPCode.NONE);
+        else setOpCode(OPCode.SELECT);
         unselectToggles();
     }
     @FXML
@@ -113,7 +113,7 @@ public class Controller {
     }
 
     @FXML
-    public void laneButtonPressed(javafx.event.ActionEvent actionEvent){ //TODO: SET OPCODE TO NONE WHEN RECLICKING BUTTON
+    public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
         //save spotId when isOccupied
         String buttonId = this.getLaneButtonLocation(actionEvent);
         Spot clickedSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
@@ -159,7 +159,7 @@ public class Controller {
     }
 
 
-    public void spawnAirplane(javafx.event.ActionEvent actionEvent){ //TODO:if spot is parking, update facing button
+    public void spawnAirplane(javafx.event.ActionEvent actionEvent){
         String buttonId = this.getLaneButtonLocation(actionEvent);
         //check airport spotlist for same id as button to see if there is a plane there
         Spot planeSpot = airport.getSpotList().get(buttonId);
