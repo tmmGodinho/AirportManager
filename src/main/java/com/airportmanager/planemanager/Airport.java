@@ -2,6 +2,7 @@ package com.airportmanager.planemanager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class Airport {
@@ -58,17 +59,15 @@ public class Airport {
         planeList.remove(planeId);
     }
 
-    public void movePlane(Plane plane, Spot spot){
-//    fromSpot isOccupied to false
-//    toSpot isOccupied to true
-//    update spotId in wherePlaneAt
-
-
+    public void movePlane(String fromSpotId, String toSpotId){
+        //update spotId in wherePlaneAt
+        String planeId = wherePlaneAt.remove(fromSpotId);
+        wherePlaneAt.put(toSpotId, planeId);
     }
 
 //    ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
 
-    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane  TODO:brute (for)ce here + update planeFacing buttons
+    public void changeParkedPlaneFacings(){  //this switches the Facing on every parked Plane
         for (String planeID : planeList.keySet()){
            if(spotList.get(planeToSpot(planeID)).getClass() == Parking.class){
                planeList.get(planeID).switchFacing();
@@ -90,6 +89,15 @@ public class Airport {
     public boolean isSpotParking(String spotId){
         Spot planeSpot = spotList.get(spotId);
         return planeSpot.getClass() == Parking.class;
+    }
+    public HashSet<String> getConnectedSpotIds(String spotId){     //returns connected spot ids according to occupying plane facing
+        HashSet<String> connectedSpotIds = new HashSet<>();
+        String planeId = wherePlaneAt.get(spotId);
+        Facing planeFacing = planeList.get(planeId).getFacing();
+        for(Spot s : spotList.get(spotId).getConnectedSpots(planeFacing)){
+            connectedSpotIds.add(s.getId());
+        }
+        return connectedSpotIds;
     }
 
 

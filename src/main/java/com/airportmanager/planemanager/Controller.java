@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.VBox;
 
+import java.util.HashSet;
+
 public class Controller {
     @FXML
     private Label currentOperation;
@@ -111,7 +113,6 @@ public class Controller {
     public void buttonPressed(javafx.event.ActionEvent actionEvent){
         //save spotId when isOccupied
         String buttonId = this.getButtonLocation(actionEvent);
-        //TODO: refactor action event passing to pass clickedSpotID
         switch (opCode){
             case NONE:
                 break;
@@ -163,18 +164,47 @@ public class Controller {
     }
 
     private void selectAirplane(String clickedSpotId) {
+        //check spot for plane,
+        if (airport.isSpotOccupied(clickedSpotId)) {
+            // if plane -> highlight it and change OPCODE to move
+            //TODO: code for highlight
+            //check for connected spots and show lines
+            HashSet<String> connectedSpotIds = airport.getConnectedSpotIds(clickedSpotId);
+            for (String sId : connectedSpotIds){
+                //TODO:code for line show or create
+            }
+            setOpCode(OPCode.MOVE);
+            selectedSpotId = clickedSpotId;
+        }
     }
+
+
+
+
     //TODO: make airplane move
-    //TODO:every click checks if lastSelection, if not, set to true
-    //TODO:set operation Label
-    //TODO:make movement paths visible, crosses for disrupted connectedSpots
+    // every click checks if lastSelection, if not, set to true
+    // set operation Label
+    // make movement paths visible, crosses for disrupted connectedSpots
     //click 2
-    //TODO:if move is legal: set fromSpot isOccupied to False, set toSpot isOccupied to True
+    // TODO: if move is legal: set fromSpot isOccupied to False, set toSpot isOccupied to True
     //                  call airport.movePlane for airport guts rearrange
     //                  make fromSpotPlane invis, set toSpotPlane to visible
 
     public void moveAirplane(String clickedSpotId){
+        //check airport spotlist for same id as button to see if there is a plane there
+        if (!airport.isSpotOccupied(clickedSpotId)) {
+            HashSet<String> connectedSpotIds = airport.getConnectedSpotIds(selectedSpotId);
+            if (connectedSpotIds.contains(clickedSpotId)){
+                //move plane on airport
+                airport.movePlane(selectedSpotId, clickedSpotId);
+                //hide previousspot plane image
+                hidePlaneImage(selectedSpotId);
+                //show newspot plane image
+                showPlaneImage(clickedSpotId);
+            }
 
+        }
+        setOpCode(OPCode.SELECT);
     }
 //check if spot is a legal move (connectedlists)
     //check if spot isOccupied
@@ -218,6 +248,7 @@ public class Controller {
         if (facing == Facing.EAST) return "E";
         else return "W";
     }
+
 
 
 }
