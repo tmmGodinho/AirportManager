@@ -1,18 +1,12 @@
 package com.airportmanager.planemanager;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 //import javafx.scene.image.Image;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-
-import java.util.Objects;
 
 public class Controller {
     @FXML
@@ -73,8 +67,8 @@ public class Controller {
 
 
     //phase 1
-    //TODO: implement moveAirplane
     //TODO: implement SelectAirplane
+    //TODO: implement moveAirplane
     //TODO: properly sided plane.pngs
     //TODO: bling it up with Facing Color + Lines on Select + selected plane circle.png
 
@@ -114,24 +108,24 @@ public class Controller {
     }
 
     @FXML
-    public void laneButtonPressed(javafx.event.ActionEvent actionEvent){
+    public void buttonPressed(javafx.event.ActionEvent actionEvent){
         //save spotId when isOccupied
-        String buttonId = this.getLaneButtonLocation(actionEvent);
-        Spot clickedSpot = airport.getSpotList().get(buttonId); //TODO: refactor action event passing to pass clickedspotID
+        String buttonId = this.getButtonLocation(actionEvent);
+        //TODO: refactor action event passing to pass clickedSpotID
         switch (opCode){
             case NONE:
                 break;
-            case MOVE:
-                moveAirplane(clickedSpot);
-                break;
             case CREATE:
-                spawnAirplane(actionEvent);
+                spawnAirplane(buttonId);
                 break;
             case DELETE:
-                deleteAirplane(actionEvent);
+                deleteAirplane(buttonId);
                 break;
             case SELECT:
-                selectAirplane(clickedSpot);
+                selectAirplane(buttonId);
+                break;
+            case MOVE:
+                moveAirplane(buttonId);
                 break;
         }
     }
@@ -144,51 +138,31 @@ public class Controller {
         if (opCode != OPCode.DELETE) deletePlaneButton.setSelected(false);
     }
 
-    public String getLaneButtonLocation(javafx.event.ActionEvent actionEvent){
+    public String getButtonLocation(javafx.event.ActionEvent actionEvent){
         Button button = (Button)actionEvent.getSource();
         return button.getId();
     }
 
 
-    public void spawnAirplane(javafx.event.ActionEvent actionEvent){
-        String buttonId = this.getLaneButtonLocation(actionEvent);
+    public void spawnAirplane(String buttonId){
         //check airport spotlist for same id as button to see if there is a plane there
-        Spot planeSpot = airport.getSpotList().get(buttonId);
-        if (!planeSpot.equals(null) && !planeSpot.getIsOccupied()) {
+        if (!airport.isSpotOccupied(buttonId)) {
             //spawn plane in buttonId Spot
-            Plane newPlane = new Plane("Plane" + planeCounter, planeSpot, airport.getFacing());
-            planeCounter++;
-            airport.populateNewPlane(newPlane, planeSpot);
-            //make plane.png appear
-            myVBox.lookup("#" + buttonId + "Plane").setVisible(true);
-            //update plane facing button
-            if (planeSpot.getClass() == Parking.class) {
-                ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
-                planeFacingButton.setText(shortenFacing(newPlane.getFacing()));
-            }
+            airport.populateNewPlane(buttonId);
+            showPlaneImage(buttonId);
         }
     }
 
-    public void deleteAirplane(javafx.event.ActionEvent actionEvent){
-        String buttonId = this.getLaneButtonLocation(actionEvent);
-        Spot planeSpot = airport.getSpotList().get(buttonId);
-        String planeIdToRemove = airport.getWherePlaneAt().get(planeSpot.id);
+    public void deleteAirplane(String buttonId){
         //check if spot has a plane
-        if(planeSpot.getIsOccupied()) { //check if delete is legal
-            Plane planeToRemove = airport.getPlaneList().get(planeIdToRemove);
+        if(airport.isSpotOccupied(buttonId)) { //check if delete is legal
             //delete from planeList and wherePlaneAt
-            airport.removePlane(planeToRemove, planeSpot);
-            //make picture invis
-            myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
-            //update plane facing button
-            if (planeSpot.getClass() == Parking.class) {
-                ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
-                planeFacingButton.setText("");
-            }
+            airport.removePlane(buttonId);
+            hidePlaneImage(buttonId);
         }
     }
 
-    private void selectAirplane(Spot clickedSpot) {
+    private void selectAirplane(String clickedSpotId) {
     }
     //TODO: make airplane move
     //TODO:every click checks if lastSelection, if not, set to true
@@ -199,25 +173,13 @@ public class Controller {
     //                  call airport.movePlane for airport guts rearrange
     //                  make fromSpotPlane invis, set toSpotPlane to visible
 
-    public void moveAirplane(Spot clickedSpot){
+    public void moveAirplane(String clickedSpotId){
 
     }
 //check if spot is a legal move (connectedlists)
     //check if spot isOccupied
     //if all good call airport.moveAirplane
 
-    public void changeParkedPlanesFacing(){ //TODO: update Facing buttons on all parked planes
-        //check airport.planelist
-        //check wherePlaneAt to see if Park   ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
-        //find key in wherePlaneAt
-        //check if key object is park
-        //if park, change facing
-
-//        for (String planeID : airport.getPlaneList().keySet()){
-//            if(airport.getSpotList().get(airport.getWherePlaneAt().get(planeID)).getClass() == Parking.class)
-//        }
-
-    }
     //make fromPicture invis and toPicture visible
 
     public void updatePlaneFacingButtons(){
@@ -228,6 +190,25 @@ public class Controller {
         }
     }
 
+
+    public void showPlaneImage(String buttonId){
+        //make plane.png appear
+        myVBox.lookup("#" + buttonId + "Plane").setVisible(true);
+        //update plane facing button
+        if (airport.isSpotParking(buttonId)){
+            ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
+            planeFacingButton.setText(shortenFacing(airport.getFacing()));
+        }
+    }
+    public void hidePlaneImage(String buttonId){
+        //make picture invis
+        myVBox.lookup("#" + buttonId + "Plane").setVisible(false);
+        //update plane facing button
+        if (airport.isSpotParking(buttonId)) {
+            ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
+            planeFacingButton.setText("");
+        }
+    }
     public void updatePlaneFacingButton(String planeId){
         ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + airport.planeToSpot(planeId) + "Facing");
         planeFacingButton.setText(shortenFacing(airport.getPlaneList().get(planeId).getFacing()));
@@ -237,5 +218,6 @@ public class Controller {
         if (facing == Facing.EAST) return "E";
         else return "W";
     }
+
 
 }

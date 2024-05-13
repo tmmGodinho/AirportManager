@@ -9,11 +9,11 @@ public class Airport {
 //TODO: revert wherePlaneAt + for loop changeParkedFacings (we brute force those)
 
     private Facing facing;
+    private int planeCounter;
     private Map<String, Spot> spotList;     //spotId, Spot
-
     private Map<String, String> wherePlaneAt;  //  spotId, PlaneId
-
     private Map<String, Plane> planeList;  // planeId, Plane
+
 
 
 
@@ -44,18 +44,18 @@ public class Airport {
         return planeList;
     }
 
-    public void populateNewPlane(Plane plane, Spot spot){  // mark spot as occupied on spotList + put the plane on planeList
-
-            spot.setIsOccupied(true);
-            wherePlaneAt.put(spot.getId(),plane.getId());
-            planeList.put(plane.getId(), plane);
+    public void populateNewPlane(String spotId){  // mark spot as occupied on spotList + put the plane on planeList
+            String planeId = "Plane" + planeCounter++;
+            Plane newPlane = new Plane(planeId, this.facing);
+            wherePlaneAt.put(spotId,newPlane.getId());
+            planeList.put(planeId, newPlane);
     }
 
-    public void removePlane(Plane plane,Spot spot){
+    public void removePlane(String spotId){
         //delete from planeList and wherePlaneAt and set spot isOccupied to false
-        spot.setIsOccupied(false);
-        wherePlaneAt.remove(plane.getId());
-        planeList.remove(plane.getId());
+        String planeId = wherePlaneAt.get(spotId);
+        wherePlaneAt.remove(spotId);
+        planeList.remove(planeId);
     }
 
     public void movePlane(Plane plane, Spot spot){
@@ -83,6 +83,15 @@ public class Airport {
         }
         return thisOne;
     }
+
+    public boolean isSpotOccupied(String spotId){ //TODO:refactor isSpotOccupieds
+        return wherePlaneAt.containsKey(spotId);
+    }
+    public boolean isSpotParking(String spotId){
+        Spot planeSpot = spotList.get(spotId);
+        return planeSpot.getClass() == Parking.class;
+    }
+
 
 
     public void print(){

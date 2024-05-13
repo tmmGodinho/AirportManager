@@ -10,7 +10,7 @@ public class Plane {
 
     protected Facing facing;
 
-    Plane(String id, Spot spot, Facing facing){
+    Plane(String id, Facing facing){
         this.id = id;
         this.facing = facing;
     }

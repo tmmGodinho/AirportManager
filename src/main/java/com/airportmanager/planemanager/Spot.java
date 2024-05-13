@@ -13,13 +13,10 @@ public abstract class Spot{
 
 
 
-    protected boolean isOccupied;
 
     public abstract String getId();
 
-    public abstract boolean getIsOccupied();
 
-    public abstract void setIsOccupied(boolean b);
 
     public abstract void setId(String id);
 

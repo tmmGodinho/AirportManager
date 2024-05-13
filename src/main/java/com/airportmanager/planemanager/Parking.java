@@ -11,7 +11,6 @@ public class Parking extends Spot{
         this.eastConnectedSpots = new HashSet<>();
         this.westConnectedSpots = new HashSet<>();
         this.constrainedParkingIds = new HashSet<>();
-        this.isOccupied = false;
     }
 
     @Override
@@ -24,15 +23,6 @@ public class Parking extends Spot{
         return id;
     }
 
-    @Override
-    public void setIsOccupied(boolean b) {
-        this.isOccupied = b;
-    }
-
-    @Override
-    public boolean getIsOccupied() {
-        return this.isOccupied;
-    }
 
     @Override
     public void setId(String id) {
