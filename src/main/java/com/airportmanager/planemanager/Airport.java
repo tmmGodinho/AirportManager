@@ -63,6 +63,7 @@ public class Airport {
         //update spotId in wherePlaneAt
         String planeId = wherePlaneAt.remove(fromSpotId);
         wherePlaneAt.put(toSpotId, planeId);
+        if(isSpotParking(toSpotId)) planeList.get(planeId).setFacing(facing);
     }
 
 //    ArrayList<String> parkedPlaneIds = airport.lookUpParkedPlaneIds();
