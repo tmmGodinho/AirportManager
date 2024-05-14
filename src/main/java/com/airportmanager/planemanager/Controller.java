@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 //import javafx.scene.image.Image;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.util.HashSet;
@@ -222,13 +223,19 @@ public class Controller {
 
 
     public void showPlaneImage(String buttonId){
+        ImageView planeImage =(ImageView) myVBox.lookup("#" + buttonId + "Plane");
         //make plane.png appear
-        myVBox.lookup("#" + buttonId + "Plane").setVisible(true);
+        //myVBox.lookup("#" + buttonId + "Plane").setVisible(true);
+        planeImage.setVisible(true);
         //update plane facing button
         if (airport.isSpotParking(buttonId)){
             ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
             planeFacingButton.setText(shortenFacing(airport.getFacing()));
-        }
+        } else if (airport.getPlaneList().get(airport.getWherePlaneAt().get(buttonId)).getFacing() == Facing.EAST) {
+            //turn jpeg 90
+            planeImage.setRotate(90);
+        } else //turn jpeg 270
+            planeImage.setRotate(270);
     }
     public void hidePlaneImage(String buttonId){
         //make picture invis
