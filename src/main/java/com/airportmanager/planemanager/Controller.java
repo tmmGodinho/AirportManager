@@ -7,7 +7,10 @@ import javafx.scene.control.Label;
 //import javafx.scene.image.Image;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polyline;
 
 import java.util.HashSet;
 
@@ -70,12 +73,17 @@ public class Controller {
 
 
     //phase 1
-    //TODO: implement SelectAirplane
-    //TODO: implement moveAirplane
-    //TODO: properly sided plane.pngs
-    //TODO: bling it up with Facing Color + Lines on Select + selected plane circle.png
+    //TODO: bling it up with
+    // Facing Color +
+    // Lines on Select +
+    // selected plane circle.png
 
     //phase 2
+    //TODO:
+    // when plane leaves parking, check way for other planes
+    // planes can park from any lane
+    // constrained parking
+    // red cross on create and move (link with constrained parking logic)
 
     @FXML
     public void createPlaneButtonPressed(javafx.event.ActionEvent actionEvent){
@@ -164,16 +172,46 @@ public class Controller {
         }
     }
 
-    private void selectAirplane(String clickedSpotId) {
+    private void selectAirplane(String clickedSpotId) { //TODO: add lines to list, remove when opcode change
         //check spot for plane,
         if (airport.isSpotOccupied(clickedSpotId)) {
+            double upperY = 0,
+                    bottomY = Double.POSITIVE_INFINITY;
             // if plane -> highlight it and change OPCODE to move
             //TODO: code for highlight
-            //check for connected spots and show lines
+            //calculate every middlegroundY to check for closest to fromButton for top & bottom
+            //feed middlegroundYs to createline procedure
             HashSet<String> connectedSpotIds = airport.getConnectedSpotIds(clickedSpotId);
-            for (String sId : connectedSpotIds){
-                //TODO:code for line show or create
+            Button fromButton = (Button) myVBox.lookup("#" + clickedSpotId);
+            double fromY = fromButton.getLayoutY();
+            for (String sId : connectedSpotIds){  //figure out midYs logic
+                Button toButton = (Button) myVBox.lookup("#"+sId);
+                //if both buttons are lanes do nothing
+                if(!(airport.isSpotLane(clickedSpotId) && airport.isSpotLane(sId))){
+                    double toY = toButton.getLayoutY();
+                    if (toY < fromY) {  //to is above from
+                        if (upperY < toY) upperY = toY;//if to is closest so far, replace
+                    } else { //if to is below from
+                        if (bottomY > toY) bottomY = toY; //if to is closest so far, replace
+                    }
+                }
+                //check if toButton higher or lower than fromButton
             }
+            double midUpperY = (fromY+upperY)/2,
+                   midBottomY = (fromY+bottomY)/2;
+            //check for connected spots and show lines
+            for (String sId : connectedSpotIds){
+                Button toButton = (Button) myVBox.lookup("#" + sId);
+                if(airport.isSpotLane(clickedSpotId) && airport.isSpotLane(sId)){
+                    createLine(fromButton, toButton);
+                }
+                else {
+                    double toY = toButton.getLayoutY();
+                    double midY = toY < fromY ? midUpperY : midBottomY;
+                    createPolyLine(fromButton, toButton, midY);
+                }
+            }
+
             setOpCode(OPCode.MOVE);
             selectedSpotId = clickedSpotId;
         }
@@ -182,14 +220,6 @@ public class Controller {
 
 
 
-    //TODO: make airplane move
-    // every click checks if lastSelection, if not, set to true
-    // set operation Label
-    // make movement paths visible, crosses for disrupted connectedSpots
-    //click 2
-    // TODO: if move is legal: set fromSpot isOccupied to False, set toSpot isOccupied to True
-    //                  call airport.movePlane for airport guts rearrange
-    //                  make fromSpotPlane invis, set toSpotPlane to visible
 
     public void moveAirplane(String clickedSpotId){
         //check airport spotlist for same id as button to see if there is a plane there
@@ -203,15 +233,10 @@ public class Controller {
                 //show newspot plane image
                 showPlaneImage(clickedSpotId);
             }
-
         }
         setOpCode(OPCode.SELECT);
     }
-//check if spot is a legal move (connectedlists)
-    //check if spot isOccupied
-    //if all good call airport.moveAirplane
 
-    //make fromPicture invis and toPicture visible
 
     public void updatePlaneFacingButtons(){
         for(String planeId : airport.getPlaneList().keySet()){
@@ -234,8 +259,9 @@ public class Controller {
         } else if (airport.getPlaneList().get(airport.getWherePlaneAt().get(buttonId)).getFacing() == Facing.EAST) {
             //turn jpeg 90
             planeImage.setRotate(90);
-        } else //turn jpeg 270
+        } else { //turn jpeg 270
             planeImage.setRotate(270);
+        }
     }
     public void hidePlaneImage(String buttonId){
         //make picture invis
@@ -257,5 +283,43 @@ public class Controller {
     }
 
 
+    public void createPolyLine(Button fromButton, Button toButton, double midY){
+        AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
+        double fromX, fromY, toX, toY;
+        fromX = fromButton.getLayoutX();
+        fromY = fromButton.getLayoutY();
+        toX = toButton.getLayoutX();
+        toY = toButton.getLayoutY();
+        /*
+        check which button on top
+        then assign value to middleground Y
+         */
+
+
+        //Creating a polyline
+        Polyline polyline = new Polyline();
+        //Adding coordinates to the polygon
+        polyline.getPoints().addAll(
+                fromX, fromY,
+                fromX, midY,   //225 up y & 410 down y
+                toX, midY,
+                toX, toY);
+        polyline.setVisible(true);
+        anchorPane.getChildren().add(polyline);
+        //TODO: save lines on some structure for later removal
+    }
+
+    public void createLine(Button fromButton, Button toButton){
+        AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
+        double fromX, fromY, toX, toY;
+        fromX = fromButton.getLayoutX();
+        fromY = fromButton.getLayoutY();
+        toX = toButton.getLayoutX();
+        toY = toButton.getLayoutY();
+        Line line = new Line(fromX,fromY,toX,toY);
+        line.setVisible(true);
+        anchorPane.getChildren().add(line);
+
+    }
 
 }

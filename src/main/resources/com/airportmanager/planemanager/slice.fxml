@@ -42,530 +42,23 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="myVBox" prefHeight="727.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airportmanager.planemanager.Controller">
+<VBox fx:id="myVBox" prefHeight="726.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airportmanager.planemanager.Controller">
   <children>
     <AnchorPane id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="694.0" prefWidth="1242.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="727.0" fitWidth="1243.0" layoutX="1.0" layoutY="-26.0">
+            <ImageView fitHeight="727.0" fitWidth="1366.0" layoutX="1.0" layoutY="-26.0" visible="false">
                <image>
                   <Image url="@../../../prototype.png" />
                </image>
             </ImageView>
-            <GridPane id="475Grid" layoutX="48.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <ImageView id="475Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="475Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="475" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="70.0" text="475" GridPane.columnIndex="1" />
-                  <ToggleButton id="475Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="471Grid" layoutX="158.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="471Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="471Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="471" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="66.0" text="471" GridPane.columnIndex="1" />
-                  <ToggleButton id="471Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="473Grid" layoutX="85.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="473Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="473Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="473" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="72.0" text="473" GridPane.columnIndex="1" />
-                  <ToggleButton id="473Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="463Grid" layoutX="329.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="30.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="0.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="463Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="463Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="463" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="463" GridPane.columnIndex="1" />
-                  <ToggleButton id="463Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="465Grid" layoutX="284.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="465Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="465Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="465" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="60.0" text="465" GridPane.columnIndex="1" />
-                  <ToggleButton id="465Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="461Grid" layoutX="393.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="461Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="461Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="461" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="60.0" text="461" GridPane.columnIndex="1" />
-                  <ToggleButton id="461Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="453Grid" layoutX="531.0" layoutY="20.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="453Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="453Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="453" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="453" GridPane.columnIndex="1" />
-                  <ToggleButton id="453Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="455Grid" layoutX="497.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="455Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="455Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="455" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="63.0" text="455" GridPane.columnIndex="1" />
-                  <ToggleButton id="455Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="451Grid" layoutX="608.0" layoutY="117.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="451Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="451Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="451" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="451" GridPane.columnIndex="1" />
-                  <ToggleButton id="451Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="466Grid" layoutX="40.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="466Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="466Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="466" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="466" GridPane.columnIndex="1" />
-                  <ToggleButton id="466Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="462Grid" layoutX="142.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="462Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="462Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="462" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="462" GridPane.columnIndex="1" />
-                  <ToggleButton id="462Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="464Grid" layoutX="85.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="464Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="464Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="464" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="70.0" text="464" GridPane.columnIndex="1" />
-                  <ToggleButton id="464Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="454Grid" layoutX="329.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="454Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="454" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="454" GridPane.columnIndex="1" />
-                  <ToggleButton id="454Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="456Grid" layoutX="284.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="456Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="456Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="456" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="61.0" text="456" GridPane.columnIndex="1" />
-                  <ToggleButton id="456Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="452Grid" layoutX="380.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="452Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="452" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="452" GridPane.columnIndex="1" />
-                  <ToggleButton id="452Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="446Grid" layoutX="493.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="446Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="446" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="446" GridPane.columnIndex="1" />
-                  <ToggleButton id="446Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="442Grid" layoutX="594.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="442Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="442" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="442" GridPane.columnIndex="1" />
-                  <ToggleButton id="442Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="444Grid" layoutX="531.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="444Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="444" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="63.0" text="444" GridPane.columnIndex="1" />
-                  <ToggleButton id="444Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="432Grid" layoutX="838.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="432Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="432" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="66.0" text="432" GridPane.columnIndex="1" />
-                  <ToggleButton id="432Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="436Grid" layoutX="739.0" layoutY="489.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="436Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="436" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="436" GridPane.columnIndex="1" />
-                  <ToggleButton id="436Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane id="434Grid" layoutX="784.0" layoutY="585.0" prefHeight="81.0" prefWidth="90.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../plane.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView id="434Cross" fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../nomeansno.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="434" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="82.0" text="434" GridPane.columnIndex="1" />
-                  <ToggleButton id="434Facing" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
             <Button id="B18" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B18" />
-            <Button id="B17" layoutX="232.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B17" />
-            <Button id="B16" layoutX="438.0" layoutY="310.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B16" />
-            <Button id="B15" layoutX="619.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B15" />
-            <Button id="B14" layoutX="803.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B14" />
+            <Button id="B17" layoutX="285.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B17" />
+            <Button id="B16" layoutX="535.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B16" />
+            <Button id="B15" layoutX="777.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B15" />
+            <Button id="B14" layoutX="1017.0" layoutY="308.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="52.0" prefWidth="52.0" text="B14" />
             <ImageView id="B18Plane" fitHeight="68.0" fitWidth="53.0" layoutX="66.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
@@ -576,56 +69,308 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B17Plane" fitHeight="68.0" fitWidth="53.0" layoutX="284.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B17Plane" fitHeight="68.0" fitWidth="53.0" layoutX="337.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B17Cross" fitHeight="53.0" fitWidth="53.0" layoutX="285.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B17Cross" fitHeight="53.0" fitWidth="53.0" layoutX="338.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B16Plane" fitHeight="68.0" fitWidth="53.0" layoutX="486.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B16Plane" fitHeight="68.0" fitWidth="53.0" layoutX="589.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B16Cross" fitHeight="53.0" fitWidth="53.0" layoutX="487.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B16Cross" fitHeight="53.0" fitWidth="53.0" layoutX="590.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B15Plane" fitHeight="68.0" fitWidth="53.0" layoutX="671.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B15Plane" fitHeight="68.0" fitWidth="53.0" layoutX="821.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B15Cross" fitHeight="53.0" fitWidth="53.0" layoutX="672.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B15Cross" fitHeight="53.0" fitWidth="53.0" layoutX="822.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B14Plane" fitHeight="68.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B14Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1043.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B14Cross" fitHeight="53.0" fitWidth="53.0" layoutX="857.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B14Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1043.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ToggleButton fx:id="airportFacingButton" layoutX="1130.0" layoutY="14.0" mnemonicParsing="false" onAction="#airportFacingButtonPressed" prefHeight="25.0" prefWidth="98.0" text="AirportFacing" />
-            <ToggleButton id="CreateAirplane" fx:id="createPlaneButton" layoutX="1130.0" layoutY="48.0" mnemonicParsing="false" onAction="#createPlaneButtonPressed" text="Create Airplane" />
-            <ToggleButton id="DeleteAirplane" fx:id="deletePlaneButton" layoutX="1130.0" layoutY="82.0" mnemonicParsing="false" onAction="#deletePlaneButtonPressed" text="Delete Airplane" />
-            <ToggleButton fx:id="movePlaneButton" layoutX="1130.0" layoutY="117.0" mnemonicParsing="false" onAction="#movePlaneButtonPressed" prefHeight="25.0" prefWidth="98.0" text="Move Airplane" />
-            <Label layoutX="1043.0" layoutY="18.0" text="Airport Facing" />
-            <Label id="currentOPCode" fx:id="currentOperation" layoutX="979.0" layoutY="595.0" prefHeight="93.0" prefWidth="265.0" underline="true">
+            <ToggleButton fx:id="airportFacingButton" layoutX="1254.0" layoutY="14.0" mnemonicParsing="false" onAction="#airportFacingButtonPressed" prefHeight="25.0" prefWidth="98.0" text="AirportFacing" />
+            <ToggleButton id="CreateAirplane" fx:id="createPlaneButton" layoutX="1254.0" layoutY="48.0" mnemonicParsing="false" onAction="#createPlaneButtonPressed" text="Create Airplane" />
+            <ToggleButton id="DeleteAirplane" fx:id="deletePlaneButton" layoutX="1254.0" layoutY="82.0" mnemonicParsing="false" onAction="#deletePlaneButtonPressed" text="Delete Airplane" />
+            <ToggleButton fx:id="movePlaneButton" layoutX="1254.0" layoutY="117.0" mnemonicParsing="false" onAction="#movePlaneButtonPressed" prefHeight="25.0" prefWidth="98.0" text="Move Airplane" />
+            <Label layoutX="1169.0" layoutY="18.0" text="Airport Facing" />
+            <Label id="currentOPCode" fx:id="currentOperation" layoutX="875.0" layoutY="27.0" prefHeight="93.0" prefWidth="265.0" underline="true">
                <font>
                   <Font name="System Bold" size="48.0" />
                </font>
             </Label>
+            <Button id="466" layoutX="332.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="466" />
+            <ToggleButton id="466Facing" layoutX="304.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="466Cross" fitHeight="53.0" fitWidth="53.0" layoutX="338.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="466Plane" fitHeight="68.0" fitWidth="53.0" layoutX="337.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="462" layoutX="458.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="462" />
+            <ToggleButton id="462Facing" layoutX="430.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="462Cross" fitHeight="53.0" fitWidth="53.0" layoutX="467.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="462Plane" fitHeight="68.0" fitWidth="53.0" layoutX="466.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="464Facing" layoutX="360.0" layoutY="645.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="464" layoutX="388.0" layoutY="601.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="70.0" text="464" />
+            <ImageView id="464Cross" fitHeight="53.0" fitWidth="53.0" layoutX="398.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="464Plane" fitHeight="68.0" fitWidth="53.0" layoutX="397.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="456" layoutX="590.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="61.0" text="456" />
+            <ToggleButton id="456Facing" layoutX="561.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="456Cross" fitHeight="53.0" fitWidth="53.0" layoutX="595.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="456Plane" fitHeight="68.0" fitWidth="53.0" layoutX="594.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="452" layoutX="710.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="452" />
+            <ToggleButton id="452Facing" layoutX="684.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="452Cross" fitHeight="53.0" fitWidth="53.0" layoutX="717.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" layoutX="716.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="454" layoutX="653.0" layoutY="601.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="454" />
+            <ImageView id="454Cross" fitHeight="53.0" fitWidth="53.0" layoutX="658.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" layoutX="658.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="454Facing" layoutX="625.0" layoutY="645.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="446" layoutX="826.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="446" />
+            <ImageView id="446Cross" fitHeight="53.0" fitWidth="53.0" layoutX="831.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" layoutX="831.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="446Facing" layoutX="800.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="442" layoutX="950.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="64.0" text="442" />
+            <ImageView id="442Cross" fitHeight="53.0" fitWidth="53.0" layoutX="955.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" layoutX="954.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="442Facing" layoutX="919.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="444" layoutX="888.0" layoutY="601.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="63.0" text="444" />
+            <ImageView id="444Cross" fitHeight="53.0" fitWidth="53.0" layoutX="894.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" layoutX="893.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="444Facing" layoutX="859.0" layoutY="645.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="436" layoutX="1078.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="436" />
+            <ImageView id="436Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1084.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1083.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="436Facing" layoutX="1050.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="432" layoutX="1211.0" layoutY="505.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="66.0" text="432" />
+            <ImageView id="432Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1218.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1218.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="432Facing" layoutX="1179.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="434" layoutX="1147.0" layoutY="601.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="434" />
+            <ImageView id="434Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1153.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1152.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="434Facing" layoutX="1122.0" layoutY="645.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="475" layoutX="77.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="70.0" text="475" />
+            <ToggleButton id="475Facing" layoutX="52.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="475Cross" fitHeight="53.0" fitWidth="53.0" layoutX="87.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="475Plane" fitHeight="68.0" fitWidth="53.0" layoutX="86.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="471" layoutX="219.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="66.0" text="471" />
+            <ImageView id="471Cross" fitHeight="53.0" fitWidth="53.0" layoutX="226.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="471Facing" layoutX="194.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <ImageView id="471Plane" fitHeight="68.0" fitWidth="53.0" layoutX="225.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <Button id="473" layoutX="147.0" layoutY="27.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="72.0" text="473" />
+            <ImageView id="473Cross" fitHeight="53.0" fitWidth="53.0" layoutX="157.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="473Plane" fitHeight="68.0" fitWidth="53.0" layoutX="157.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="473Facing" layoutX="124.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="465" layoutX="344.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="60.0" text="465" />
+            <ImageView id="465Cross" fitHeight="53.0" fitWidth="53.0" layoutX="348.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="465Plane" fitHeight="68.0" fitWidth="53.0" layoutX="348.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="465Facing" layoutX="318.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="461" layoutX="469.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="60.0" text="461" />
+            <ImageView id="461Cross" fitHeight="53.0" fitWidth="53.0" layoutX="473.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="461Plane" fitHeight="68.0" fitWidth="53.0" layoutX="472.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="461Facing" layoutX="444.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="463" layoutX="404.0" layoutY="27.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="463" />
+            <ImageView id="463Cross" fitHeight="53.0" fitWidth="53.0" layoutX="409.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="463Plane" fitHeight="68.0" fitWidth="53.0" layoutX="409.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="463Facing" layoutX="375.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="453" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="453" />
+            <ImageView id="453Cross" fitHeight="53.0" fitWidth="53.0" layoutX="652.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="453Plane" fitHeight="68.0" fitWidth="53.0" layoutX="652.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="453Facing" layoutX="622.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="455" layoutX="584.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="63.0" text="455" />
+            <ImageView id="455Cross" fitHeight="53.0" fitWidth="53.0" layoutX="590.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="455Plane" fitHeight="68.0" fitWidth="53.0" layoutX="589.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="455Facing" layoutX="558.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+            <Button id="451" layoutX="711.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="62.0" text="451" />
+            <ImageView id="451Cross" fitHeight="53.0" fitWidth="53.0" layoutX="716.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../nomeansno.png" />
+               </image>
+            </ImageView>
+            <ImageView id="451Plane" fitHeight="68.0" fitWidth="53.0" layoutX="716.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../plane.png" />
+               </image>
+            </ImageView>
+            <ToggleButton id="451Facing" layoutX="684.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
       </children>
     </AnchorPane>
     <MenuBar VBox.vgrow="NEVER">

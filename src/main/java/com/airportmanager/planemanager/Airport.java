@@ -91,6 +91,10 @@ public class Airport {
         Spot planeSpot = spotList.get(spotId);
         return planeSpot.getClass() == Parking.class;
     }
+    public boolean isSpotLane(String spotId){
+        Spot planeSpot = spotList.get(spotId);
+        return planeSpot.getClass() == Lane.class;
+    }
     public HashSet<String> getConnectedSpotIds(String spotId){     //returns connected spot ids according to occupying plane facing
         HashSet<String> connectedSpotIds = new HashSet<>();
         String planeId = wherePlaneAt.get(spotId);
