@@ -85,7 +85,6 @@ public class Controller {
     //phase 1
     //TODO: bling it up with
     // Facing Color +
-    // Lines on Select +
     // selected plane circle.png
 
     //phase 2
@@ -118,15 +117,11 @@ public class Controller {
         cleanSelectedLines();
     }
     @FXML
-    public void airportFacingButtonPressed(javafx.event.ActionEvent actionEvent){  //Switch Airport Facing + change Parked Facings
-        if(airport.getFacing() == Facing.WEST){
-            airport.setFacing(Facing.EAST);
-            airportFacingButton.setText(airport.getFacing().toString());
-        }
-        else{
-            airport.setFacing(Facing.WEST);
-            airportFacingButton.setText(airport.getFacing().toString());
-        }
+    public void airportFacingButtonPressed(javafx.event.ActionEvent actionEvent){  //Switch Airport Facing + change Parked Facings TODO:if opcode = move
+        if(opCode == OPCode.MOVE) setOpCode(OPCode.NONE);
+        Facing newFacing = airport.getFacing() == Facing.WEST ? Facing.EAST : Facing.WEST;
+        airport.setFacing(newFacing);
+        airportFacingButton.setText(airport.getFacing().toString());
         airport.changeParkedPlaneFacings();
         updatePlaneFacingButtons();
         cleanSelectedLines();
@@ -188,7 +183,7 @@ public class Controller {
         }
     }
 
-    private void selectAirplane(String clickedSpotId) { //TODO: add lines to list, remove when opcode change
+    private void selectAirplane(String clickedSpotId) {
         //check spot for plane,
         if (airport.isSpotOccupied(clickedSpotId)) {
             double upperY = 0,
@@ -217,14 +212,15 @@ public class Controller {
                    midBottomY = (fromY+bottomY)/2;
             //check for connected spots and show lines
             for (String sId : connectedSpotIds){
-                Button toButton = (Button) myVBox.lookup("#" + sId);
-                if(airport.isSpotLane(clickedSpotId) && airport.isSpotLane(sId)){
-                    createLine(fromButton, toButton);
-                }
-                else {
-                    double toY = toButton.getLayoutY();
-                    double midY = toY < fromY ? midUpperY : midBottomY;
-                    createPolyLine(fromButton, toButton, midY);
+                if(!airport.isSpotOccupied(sId)) {
+                    Button toButton = (Button) myVBox.lookup("#" + sId);
+                    if (airport.isSpotLane(clickedSpotId) && airport.isSpotLane(sId)) {
+                        createLine(fromButton, toButton);
+                    } else {
+                        double toY = toButton.getLayoutY();
+                        double midY = toY < fromY ? midUpperY : midBottomY;
+                        createPolyLine(fromButton, toButton, midY);
+                    }
                 }
             }
 
@@ -324,7 +320,6 @@ public class Controller {
         polyline.setVisible(true);
         anchorPane.getChildren().add(polyline);
         selectedPlaneLines.add(polyline);
-        //TODO: save lines on some structure for later removal
     }
 
     public void cleanSelectedLines(){
