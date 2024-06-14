@@ -89,22 +89,22 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B15Plane" fitHeight="68.0" fitWidth="53.0" layoutX="821.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B15Plane" fitHeight="68.0" fitWidth="53.0" layoutX="831.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B15Cross" fitHeight="53.0" fitWidth="53.0" layoutX="822.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B15Cross" fitHeight="53.0" fitWidth="53.0" layoutX="831.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="B14Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1043.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B14Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1068.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
             </ImageView>
-            <ImageView id="B14Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1043.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="B14Cross" fitHeight="53.0" fitWidth="53.0" layoutX="1069.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../../nomeansno.png" />
                </image>
@@ -174,7 +174,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" layoutX="716.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="452Plane" fitHeight="68.0" fitWidth="53.0" layoutX="716.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -185,7 +185,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" layoutX="658.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="454Plane" fitHeight="68.0" fitWidth="53.0" layoutX="658.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -197,7 +197,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" layoutX="831.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="446Plane" fitHeight="68.0" fitWidth="53.0" layoutX="831.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -209,7 +209,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" layoutX="954.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="442Plane" fitHeight="68.0" fitWidth="53.0" layoutX="954.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -221,7 +221,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" layoutX="893.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="444Plane" fitHeight="68.0" fitWidth="53.0" layoutX="893.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -233,7 +233,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1083.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="436Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1083.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -245,7 +245,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1218.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="432Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1218.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>
@@ -257,7 +257,7 @@
                   <Image url="@../../../nomeansno.png" />
                </image>
             </ImageView>
-            <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1152.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView id="434Plane" fitHeight="68.0" fitWidth="53.0" layoutX="1152.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" visible="false">
                <image>
                   <Image url="@../../../plane.png" />
                </image>

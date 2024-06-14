@@ -11,8 +11,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polyline;
+import javafx.scene.shape.Shape;
 
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Controller {
     @FXML
@@ -36,11 +39,15 @@ public class Controller {
     private OPCode opCode;
     private String selectedSpotId;
     private Parent root;
-    private int planeCounter;
+    private LinkedList<Shape> selectedPlaneLines;
 
 
     public void thisWorks(javafx.event.ActionEvent actionEvent) {
         System.out.println("Button Pressed! "+ actionEvent.getSource() );
+    }
+
+    public void startPlaneLineList(){
+        selectedPlaneLines = new LinkedList<>();
     }
 
     public void setAirport(Airport airport){
@@ -66,6 +73,9 @@ public class Controller {
     public void printAirport(){
         this.airport.print();
     }
+    public LinkedList<Shape> getSelectedPlaneLines(){
+        return selectedPlaneLines;
+    }
 
     // make procedure
     // do behind scenes Airport alteration
@@ -90,6 +100,7 @@ public class Controller {
         if(opCode == OPCode.CREATE) setOpCode(OPCode.NONE);
         else setOpCode(OPCode.CREATE);
         unselectToggles();
+        cleanSelectedLines();
     }
 
     @FXML
@@ -97,12 +108,14 @@ public class Controller {
         if(opCode == OPCode.DELETE) setOpCode(OPCode.NONE);
         else setOpCode(OPCode.DELETE);
         unselectToggles();
+        cleanSelectedLines();
     }
     @FXML
     public void movePlaneButtonPressed(javafx.event.ActionEvent actionEvent){
         if(opCode == OPCode.SELECT) setOpCode(OPCode.NONE);
         else setOpCode(OPCode.SELECT);
         unselectToggles();
+        cleanSelectedLines();
     }
     @FXML
     public void airportFacingButtonPressed(javafx.event.ActionEvent actionEvent){  //Switch Airport Facing + change Parked Facings
@@ -116,6 +129,8 @@ public class Controller {
         }
         airport.changeParkedPlaneFacings();
         updatePlaneFacingButtons();
+        cleanSelectedLines();
+        //TODO:maybe unselectToggles() here?
     }
 
     @FXML
@@ -152,6 +167,7 @@ public class Controller {
         Button button = (Button)actionEvent.getSource();
         return button.getId();
     }
+
 
 
     public void spawnAirplane(String buttonId){
@@ -234,6 +250,7 @@ public class Controller {
                 showPlaneImage(clickedSpotId);
             }
         }
+        cleanSelectedLines();
         setOpCode(OPCode.SELECT);
     }
 
@@ -306,7 +323,18 @@ public class Controller {
                 toX, toY);
         polyline.setVisible(true);
         anchorPane.getChildren().add(polyline);
+        selectedPlaneLines.add(polyline);
         //TODO: save lines on some structure for later removal
+    }
+
+    public void cleanSelectedLines(){
+        AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
+        for (Iterator<Shape> it = selectedPlaneLines.iterator(); it.hasNext(); ) {
+            Shape aShape = it.next();
+            it.remove();
+            anchorPane.getChildren().remove(aShape);
+            selectedPlaneLines.remove(aShape);
+        }
     }
 
     public void createLine(Button fromButton, Button toButton){
@@ -319,6 +347,7 @@ public class Controller {
         Line line = new Line(fromX,fromY,toX,toY);
         line.setVisible(true);
         anchorPane.getChildren().add(line);
+        selectedPlaneLines.add(line);
 
     }
 

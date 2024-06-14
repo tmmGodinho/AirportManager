@@ -62,6 +62,7 @@ public class AirportService extends Application {
         controller.setAirport(airportToGUI);
         controller.setOpCode(OPCode.NONE);
         controller.getAirportFacingButton().setText(getAirportToGUI().getFacing().toString());
+        controller.startPlaneLineList();
 
         Scene scene = new Scene(root);
         stage.setTitle("Hello!");
