@@ -31,11 +31,12 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
         JsonObject eastObject = (JsonObject) jsonObject.get("east_connections");
         JsonObject westObject = (JsonObject) jsonObject.get("west_connections");
 
-        genConnections(spotMap, eastObject, westObject);
+        genConnections(spotMap, westObject, eastObject);
         if(jsonObject.has("constrained_parking")){
             JsonObject constrainedParkingObject = (JsonObject) jsonObject.get("constrained_parking");
             genConstraints(spotMap, constrainedParkingObject);
         }
+
         return new Airport(spotMap);
     }
 
@@ -52,29 +53,23 @@ public class AirportDeserializer implements JsonDeserializer<Airport> {
     private void genConnections(Map<String, Spot> spotMap, JsonObject westObject, JsonObject eastObject){
         for (String laneId : westObject.keySet()) {
             Spot spotFrom = spotMap.get(laneId);
-            JsonArray laneConnections = (JsonArray) westObject.get(laneId);
-            Iterator<JsonElement> it = laneConnections.iterator();
+            JsonArray connections = (JsonArray) westObject.get(laneId);
+            Iterator<JsonElement> it = connections.iterator();
             while (it.hasNext()){
                 String toKey = it.next().getAsString();
                 Spot spotTo = spotMap.get(toKey);
                 spotFrom.addToConnectedSpots(spotTo, Facing.WEST);
-                if (!(spotFrom instanceof Lane && spotTo instanceof Lane)) {
-                    spotTo.addToConnectedSpots(spotFrom, Facing.WEST);
-                }
             }
 
         }
         for (String laneId : eastObject.keySet()) {
             Spot spotFrom = spotMap.get(laneId);
-            JsonArray laneConnections = (JsonArray) eastObject.get(laneId);
-            Iterator<JsonElement> it = laneConnections.iterator();
+            JsonArray connections = (JsonArray) eastObject.get(laneId);
+            Iterator<JsonElement> it = connections.iterator();
             while (it.hasNext()){
                 String toKey = it.next().getAsString();
                 Spot spotTo = spotMap.get(toKey);
                 spotFrom.addToConnectedSpots(spotTo, Facing.EAST);
-                if (!(spotFrom instanceof Lane && spotTo instanceof Lane)) {
-                    spotTo.addToConnectedSpots(spotFrom, Facing.EAST);
-                }
             }
         }
 

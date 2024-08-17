@@ -270,10 +270,10 @@ public class Controller {
             ToggleButton planeFacingButton = (ToggleButton) myVBox.lookup("#" + buttonId + "Facing");
             planeFacingButton.setText(shortenFacing(airport.getFacing()));
         } else if (airport.getPlaneList().get(airport.getWherePlaneAt().get(buttonId)).getFacing() == Facing.EAST) {
-            //turn jpeg 90
-            planeImage.setRotate(90);
-        } else { //turn jpeg 270
+            //turn jpeg 270
             planeImage.setRotate(270);
+        } else { //turn jpeg 90
+            planeImage.setRotate(90);
         }
     }
     public void hidePlaneImage(String buttonId){
