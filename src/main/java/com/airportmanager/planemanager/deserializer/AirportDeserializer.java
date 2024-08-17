@@ -1,4 +1,4 @@
-package com.airportmanager.planemanager;
+package com.airportmanager.planemanager.deserializer;
 
 
 import java.lang.reflect.Type;
@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import com.airportmanager.planemanager.*;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

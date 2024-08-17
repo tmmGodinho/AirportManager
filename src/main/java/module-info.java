@@ -16,5 +16,7 @@ module com.airportmanager.planemanager {
     opens com.airportmanager.planemanager to javafx.fxml;
 //    exports com.airportmanager;
     exports com.airportmanager.planemanager;
+    exports com.airportmanager.planemanager.deserializer;
+    opens com.airportmanager.planemanager.deserializer to javafx.fxml;
 //    opens com.airportmanager.planemanager to javafx.fxml;
 }

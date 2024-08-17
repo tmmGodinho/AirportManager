@@ -35,7 +35,10 @@ public class Controller {
 
 
 
-
+    static private final int XPARKBUTTONOFFSET = 32;
+    static private final int YPARKBUTTONOFFSET = 13;
+    static private final int XLANEBUTTONOFFSET = 26;
+    static private final int YLANEBUTTONOFFSET = 26;
     private OPCode opCode;
     private String selectedSpotId;
     private Parent root;
@@ -296,13 +299,27 @@ public class Controller {
     }
 
 
+    public void cleanSelectedLines(){
+        AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
+        for (Iterator<Shape> it = selectedPlaneLines.iterator(); it.hasNext(); ) {
+            Shape aShape = it.next();
+            it.remove();
+            anchorPane.getChildren().remove(aShape);
+            selectedPlaneLines.remove(aShape);
+        }
+    }
+
     public void createPolyLine(Button fromButton, Button toButton, double midY){
         AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
         double fromX, fromY, toX, toY;
-        fromX = fromButton.getLayoutX();
-        fromY = fromButton.getLayoutY();
-        toX = toButton.getLayoutX();
-        toY = toButton.getLayoutY();
+        midY += YLANEBUTTONOFFSET;
+        boolean isFromLane = airport.isSpotLane(fromButton.getId());
+        boolean isToLane = airport.isSpotLane(toButton.getId());
+        fromY = fromButton.getLayoutY() + (isFromLane ? YLANEBUTTONOFFSET : YPARKBUTTONOFFSET);
+        fromX = fromButton.getLayoutX() + (isFromLane ? XLANEBUTTONOFFSET : XPARKBUTTONOFFSET);
+        toX = toButton.getLayoutX() + (isToLane ? XLANEBUTTONOFFSET : XPARKBUTTONOFFSET);
+        toY = toButton.getLayoutY() + (isToLane ? YLANEBUTTONOFFSET : YPARKBUTTONOFFSET);
+        // + (is button lane ? X lane : X parking)
         /*
         check which button on top
         then assign value to middleground Y
@@ -320,30 +337,26 @@ public class Controller {
         polyline.setVisible(true);
         anchorPane.getChildren().add(polyline);
         selectedPlaneLines.add(polyline);
-    }
-
-    public void cleanSelectedLines(){
-        AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
-        for (Iterator<Shape> it = selectedPlaneLines.iterator(); it.hasNext(); ) {
-            Shape aShape = it.next();
-            it.remove();
-            anchorPane.getChildren().remove(aShape);
-            selectedPlaneLines.remove(aShape);
-        }
+        //cleanup
+        fromButton.toFront();
+        toButton.toFront();
+        myVBox.lookup("#" + fromButton.getId() + "Plane").toFront();
     }
 
     public void createLine(Button fromButton, Button toButton){
         AnchorPane anchorPane = (AnchorPane) myVBox.lookup("#anchorPane");
         double fromX, fromY, toX, toY;
-        fromX = fromButton.getLayoutX();
-        fromY = fromButton.getLayoutY();
-        toX = toButton.getLayoutX();
-        toY = toButton.getLayoutY();
+        fromX = fromButton.getLayoutX() + XLANEBUTTONOFFSET;
+        fromY = fromButton.getLayoutY() + YLANEBUTTONOFFSET;
+        toX = toButton.getLayoutX() + XLANEBUTTONOFFSET;
+        toY = toButton.getLayoutY() + YLANEBUTTONOFFSET;
         Line line = new Line(fromX,fromY,toX,toY);
         line.setVisible(true);
         anchorPane.getChildren().add(line);
         selectedPlaneLines.add(line);
-
+        fromButton.toFront();
+        toButton.toFront();
+        myVBox.lookup("#" + fromButton.getId() + "Plane").toFront();
     }
 
 }
